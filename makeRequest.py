@@ -26,7 +26,7 @@ brand_dict = [
 ]
 
 # Select a brand dynamically
-brand_name = "Snitch"  # Change this to the brand you want
+brand_name = "Zara"  # Change this to the brand you want
 brand = next((b for b in brand_dict if b["name"] == brand_name), None)
 
 # Check if brand exists, otherwise exit
@@ -43,7 +43,7 @@ settings = {
     "frequency_penalty": 0,  # Avoid unnecessary word repetition
     "presence_penalty": 0,  # Allow all relevant details to appear
 #    "search_recency_filter": "week",  # Get the most recent policies
-#    "search_domain_filter": [],  # Can be set to ["hm.com", "zara.com"] for accuracy
+#    "search_domain_filter": [brand["url"]],  # Can be set to ["hm.com", "zara.com"] for accuracy
     "web_search_options": {"search_context_size": "high"}  # Ensure deeper context from web results
 }
 
@@ -84,6 +84,7 @@ Prioritize the official website ({brand["url"]}) as the main source. If the requ
 - **Ensure accuracy and factual correctness**—do **not** make assumptions.  
 - **Follow the response format strictly**, and include an **'Additional Information'** section for anything relevant that does not fit neatly into the structured response.  
 """
+
 
 # Define messages
 messages = [

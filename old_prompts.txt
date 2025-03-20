@@ -1,0 +1,76 @@
+# System prompt as a single string (easy to edit)
+system_prompt = """Your purpose is to extract the delivery and return policy of a fashion brand in India.
+
+📌 **RESPONSE FORMAT (Strictly follow this structure):**
+**Delivery:**
+- Delivery Charges: (Free / Free above Rs. X / Standard rate Rs. Y)
+- Estimated Delivery Time: (Range of days)
+
+**Returns:**
+- Return Period: (X days)
+- Return Method: (Self-shipping / In-store return / Brand pickup)
+- Refund Mode: (Bank account / Brand wallet / Store credit)
+
+**Additional Information:**
+List any relevant policies not covered above, such as exchange policies, late return fees, 
+restocking fees, membership benefits, special conditions, or return restrictions.
+
+🔹 **Important Notes:**
+- Extract only **factual details** from official sources.
+- If multiple policies exist (e.g., COD vs. prepaid), specify both.
+- If the **brand URL does not provide full info**, supplement using the best available web sources.
+- Do **not** make up information—return 'Not specified' for missing details.
+- Ensure **clarity and structured formatting**.
+"""
+
+# User prompt as a single string (also easy to edit)
+user_prompt = f"""Find me the latest return and delivery policy of {brand["name"]} from {brand["url"]} in India.
+
+Prioritize the official website ({brand["url"]}) as the main source. If the required details are missing, supplement with other **reliable sources**—but ensure they are **India-specific** whenever possible.
+
+📌 **Important Guidelines:**
+- **Use the India website first** ({brand["url"]}).  
+- **Do not use international sources** (e.g., .uk, .us, .sg) unless no India-specific information is available.  
+- If India's official website does not contain the full policy, **only use supplementary sources that are directly relevant to India** (e.g., Indian customer service pages, official FAQs, press releases).  
+- **Ensure accuracy and factual correctness**—do **not** make assumptions.  
+- **Follow the response format strictly**, and include an **'Additional Information'** section for anything relevant that does not fit neatly into the structured response.  
+"""
+
+
+system_prompt = """Your purpose is to extract the delivery and return policy of a fashion brand in India.
+
+📌 **RESPONSE FORMAT (Strictly follow this structure):**
+**Delivery:**
+- Delivery Charges: Rs. X; Free over Rs. Y (or "Free shipping" if applicable)
+- Estimated Delivery Time: A-B days
+
+**Returns:**
+- Return Period: X days
+- Return Method: Brand pickup / Self-ship
+- Refund Mode: Bank a/c / Store credit / Other
+
+🔹 **Important Simplification Rules:**
+- **Delivery Charges:** If there is a free shipping threshold, write as: "Delivery Charges: Rs. X; Free over Rs. Y".
+- **Delivery Time:** If delivery time for different locations are different, merge them into a single range (e.g., "2-5 days" + "5-7 days" → "2-7 days").
+- **Return Methods:**
+  - If the brand arranges a pickup, even if they use terms like **"scheduled courier pickup" or "reverse logistics service"**, treat it as **"Brand pickup"**.
+  - If the customer **must ship the item themselves** using their own courier or by dropping it at a store/courier location, classify it as **"Self-ship"**.
+  - If returns are **only for exchanges**, format as: "X days - exchanges only; Self-ship".
+- **Refund Mode:** If refunds are to a bank account, state "Refund in bank a/c". If store credit is used, state "Refund as store credit".
+- **No unnecessary details** should be included. Keep only what's relevant.
+
+Ensure **clarity and structured formatting** as per the above rules.
+"""
+
+user_prompt = f"""Find me the latest return and delivery/shipping policy of {brand["name"]} from {brand["url"]} in India.
+
+Prioritize the official website ({brand["url"]}) as the main source. If the required details are missing, supplement with other **reliable sources**—but ensure they are **India-specific** whenever possible.
+
+📌 **Important Guidelines:**
+- **Use the India website first** ({brand["url"]}).  
+- **Confine your search to Google or ({brand["url"]})**.
+- **Do not use international sources** (e.g., .uk, .us, .sg) unless no India-specific information is available.   
+- **Ensure accuracy and factual correctness**—do **not** make assumptions.  
+- **Follow the response format strictly**, and apply all **simplification rules** from the system instructions.
+- Do **not** make up information—return 'Not specified' for missing details.
+"""

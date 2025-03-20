@@ -505,3 +505,1275 @@ Response Details:
     [18] https://www.snitch.com/men-jeans/navy-washed-bootcut-jeans-4msd3902-01/8580606820514/buy
     [19] https://www.snitch.com/men-shirts/black-self-design-slim-fit-shirt-4mss3874-03/8569378242722/buy
     [20] https://dspace.mit.edu/bitstream/handle/1721.1/128634/1221003830-MIT.pdf?sequence=1&isAllowed=y
+
+==================================================
+API Call Timestamp: 2025-03-20 21:17:34
+==================================================
+
+API Request Settings:
+  model               : sonar-pro
+  temperature         : 0.1
+  max_tokens          : 200
+  top_p               : 0.3
+  frequency_penalty   : 0
+  presence_penalty    : 0
+  web_search_options  : {'search_context_size': 'high'}
+
+System Prompt:
+Your purpose is to extract the delivery and return policy of a fashion brand in India.
+
+📌 **RESPONSE FORMAT (Strictly follow this structure):**
+**Delivery:**
+- Delivery Charges: Rs. X; Free over Rs. Y (or "Free shipping" if applicable)
+- Estimated Delivery Time: A-B days
+
+**Returns:**
+- Return Period: X days
+- Return Method: Brand pickup / Self-ship
+- Refund Mode: Bank a/c / Store credit / Other
+
+🔹 **Important Simplification Rules:**
+- **Delivery Charges:** If there is a free shipping threshold, write as: "Delivery Charges: Rs. X; Free over Rs. Y".
+- **Delivery Time:** If delivery time for different locations are different, merge them into a single range (e.g., "2-5 days" + "5-7 days" → "2-7 days").
+- **Return Methods:**
+  - If the brand arranges a pickup, even if they use terms like **"scheduled courier pickup" or "reverse logistics service"**, treat it as **"Brand pickup"**.
+  - If the customer **must ship the item themselves** using their own courier or by dropping it at a store/courier location, classify it as **"Self-ship"**.
+  - If returns are **only for exchanges**, format as: "X days - exchanges only; Self-ship".
+- **Refund Mode:** If refunds are to a bank account, state "Refund in bank a/c". If store credit is used, state "Refund as store credit".
+- **No unnecessary details** should be included. Keep only what's relevant.
+- If the **brand URL does not provide full info**, supplement using the best available India-specific sources.
+- Do **not** make up information—return 'Not specified' for missing details.
+
+Ensure **clarity and structured formatting** as per the above rules.
+
+
+User Prompt:
+Find me the latest return and delivery policy of H&M from https://www2.hm.com/en_in/index.html in India.
+
+Prioritize the official website (https://www2.hm.com/en_in/index.html) as the main source. If the required details are missing, supplement with other **reliable sources**—but ensure they are **India-specific** whenever possible.
+
+📌 **Important Guidelines:**
+- **Use the India website first** (https://www2.hm.com/en_in/index.html).  
+- **Do not use international sources** (e.g., .uk, .us, .sg) unless no India-specific information is available.  
+- If India's official website does not contain the full policy, **only use supplementary sources that are directly relevant to India** (e.g., Indian customer service pages, official FAQs, press releases).  
+- **Ensure accuracy and factual correctness**—do **not** make assumptions.  
+- **Follow the response format strictly**, and apply all **simplification rules** from the system instructions.
+
+
+Response Details:
+  Final Answer       : Based on the information from H&M's official Indian website and related sources, here is the latest return and delivery policy for H&M in India:
+
+**Delivery:**
+- Delivery Charges: Rs. 149; Free over Rs. 1999
+- Estimated Delivery Time: 2-7 days
+
+**Returns:**
+- Return Period: 15 days
+- Return Method: Brand pickup
+- Refund Mode: Original form of payment
+  Token Usage       : CompletionUsage(completion_tokens=89, prompt_tokens=614, total_tokens=703, completion_tokens_details=None, prompt_tokens_details=None, search_context_size='high')
+  Citations         :
+    [1] https://www.fashionatingworld.com/new1-2/h-m-introduces-new-clause-in-returns-policy
+    [2] https://www2.hm.com/en_in/customer-service/legal-and-privacy/terms-and-conditions.html
+    [3] https://www2.hm.com/en_in/customer-service/contact.html
+    [4] https://www2.hm.com/en_in/customer-service/shipping-delivery.html
+    [5] https://www2.hm.com/en_in/customer-service/returns.html
+    [6] https://www2.hm.com/en_sg/customer-service/shippinganddelivery.html
+    [7] https://www2.hm.com/en_in/customer-service/contact.modal.html
+    [8] https://www2.hm.com/en_in/index.html
+    [9] https://www.colisexpat.com/en/delivery-shipping/india/handm/
+    [10] https://www2.hm.com/en_in/customer-service/annual-return.html
+    [11] https://www2.hm.com/en_sg/customer-service/returns.html
+    [12] https://www2.hm.com/en_in/customer-service.html
+    [13] https://www2.hm.com/en_in/customer-service/return-link.html
+    [14] https://www2.hm.com/en_us/customer-service/returns.html
+    [15] https://www2.hm.com/en_in/customer-service/shipping-delivery.modal.html
+    [16] https://www2.hm.com/en_sg/customer-service/contact.html
+    [17] https://www.prnewswire.com/news-releases/tyla-fka-twigs-and-caroline-polachek-shine-in-hms-festival-ready-ss-2025-collection-302407133.html
+    [18] https://www2.hm.com/en_in/customer-service/shopping-at-hm/online-shopping.html
+    [19] https://www2.hm.com/en_asia5/customer-service/returns.html
+    [20] https://www2.hm.com/en_gb/customer-service/shipping-and-delivery.html
+
+==================================================
+API Call Timestamp: 2025-03-20 21:18:43
+==================================================
+
+API Request Settings:
+  model               : sonar-pro
+  temperature         : 0.1
+  max_tokens          : 200
+  top_p               : 0.3
+  frequency_penalty   : 0
+  presence_penalty    : 0
+  web_search_options  : {'search_context_size': 'high'}
+
+System Prompt:
+Your purpose is to extract the delivery and return policy of a fashion brand in India.
+
+📌 **RESPONSE FORMAT (Strictly follow this structure):**
+**Delivery:**
+- Delivery Charges: Rs. X; Free over Rs. Y (or "Free shipping" if applicable)
+- Estimated Delivery Time: A-B days
+
+**Returns:**
+- Return Period: X days
+- Return Method: Brand pickup / Self-ship
+- Refund Mode: Bank a/c / Store credit / Other
+
+🔹 **Important Simplification Rules:**
+- **Delivery Charges:** If there is a free shipping threshold, write as: "Delivery Charges: Rs. X; Free over Rs. Y".
+- **Delivery Time:** If delivery time for different locations are different, merge them into a single range (e.g., "2-5 days" + "5-7 days" → "2-7 days").
+- **Return Methods:**
+  - If the brand arranges a pickup, even if they use terms like **"scheduled courier pickup" or "reverse logistics service"**, treat it as **"Brand pickup"**.
+  - If the customer **must ship the item themselves** using their own courier or by dropping it at a store/courier location, classify it as **"Self-ship"**.
+  - If returns are **only for exchanges**, format as: "X days - exchanges only; Self-ship".
+- **Refund Mode:** If refunds are to a bank account, state "Refund in bank a/c". If store credit is used, state "Refund as store credit".
+- **No unnecessary details** should be included. Keep only what's relevant.
+- If the **brand URL does not provide full info**, supplement using the best available India-specific sources.
+- Do **not** make up information—return 'Not specified' for missing details.
+
+Ensure **clarity and structured formatting** as per the above rules.
+
+
+User Prompt:
+Find me the latest return and delivery policy of Zara from https://www.zara.com/in/ in India.
+
+Prioritize the official website (https://www.zara.com/in/) as the main source. If the required details are missing, supplement with other **reliable sources**—but ensure they are **India-specific** whenever possible.
+
+📌 **Important Guidelines:**
+- **Use the India website first** (https://www.zara.com/in/).  
+- **Do not use international sources** (e.g., .uk, .us, .sg) unless no India-specific information is available.  
+- If India's official website does not contain the full policy, **only use supplementary sources that are directly relevant to India** (e.g., Indian customer service pages, official FAQs, press releases).  
+- **Ensure accuracy and factual correctness**—do **not** make assumptions.  
+- **Follow the response format strictly**, and apply all **simplification rules** from the system instructions.
+
+
+Response Details:
+  Final Answer       : Based on the information from Zara's official India website and other India-specific sources, here is the latest return and delivery policy for Zara in India:
+
+**Delivery:**
+- Delivery Charges: Free shipping (for orders above a certain amount, not specified)
+- Estimated Delivery Time: 2-7 days[1]
+
+**Returns:**
+- Return Period: 30 days from the shipping date of the order[1]
+- Return Method: Brand pickup or in-store return[1][6]
+- Refund Mode: Original payment method; bank transfer for cash on delivery orders[6]
+
+🔹 Additional Details:
+- In-store returns are free for both online and in-store purchases[1]
+- Items must be in original condition with all labels attached[1]
+- Some items like swimwear, underwear, accessories, fragrances, watches, an
+  Token Usage       : CompletionUsage(completion_tokens=173, prompt_tokens=607, total_tokens=780, completion_tokens_details=None, prompt_tokens_details=None, search_context_size='high')
+  Citations         :
+    [1] https://www.zara.com/in/en/help-center/HowToReturn
+    [2] https://www.zarafashions.in/pages/shipping-delivery
+    [3] https://m.indiacustomercare.com/zara-customer-care-number
+    [4] https://www.zara.com/us/en/help-center/HowToReturn
+    [5] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20170921.pdf
+    [6] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20230519.pdf
+    [7] https://www.zara.com/in/en/help-center/EditOrder
+    [8] https://static.zara.net/static/pdfs/UK/terms-and-conditions/terms-and-conditions-en_UK-20240201.pdf
+    [9] https://www.zara.com/ww/en/help-center/HowToReturn
+    [10] https://timesofindia.indiatimes.com/life-style/fashion/luxury/fashion/why-zara-cant-do-without-india-now/articleshow/115550871.cms
+    [11] https://www.zara.com/in/en/contact
+    [12] https://www.zara.com/in/
+    [13] https://www.zara.com/in/en/help-center/ReturnSpecialConditions
+    [14] https://zaraethnic.com/pages/shipping-policy
+    [15] http://sbm.uum.edu.my/images/2022/cbm/ProceedingCBM2022withISBN.pdf
+    [16] https://www.zara.com/in/en/help-center/Refund
+    [17] https://www.zara.com/ww/en/help-center/DeliveryMethods
+    [18] https://msa.maryland.gov/megafile/msa/speccol/sc5300/sc5339/000113/014000/014401/unrestricted/20120212e.pdf
+    [19] https://www.zara.com/us/en/help-center/HowToExchange
+    [20] https://www.zara.com/in/en/help-center/DeliveryRestrictions
+
+==================================================
+API Call Timestamp: 2025-03-20 21:20:54
+==================================================
+
+API Request Settings:
+  model               : sonar-pro
+  temperature         : 0.1
+  max_tokens          : 200
+  top_p               : 0.3
+  frequency_penalty   : 0
+  presence_penalty    : 0
+  web_search_options  : {'search_context_size': 'high'}
+
+System Prompt:
+Your purpose is to extract the delivery and return policy of a fashion brand in India.
+
+📌 **RESPONSE FORMAT (Strictly follow this structure):**
+**Delivery:**
+- Delivery Charges: Rs. X; Free over Rs. Y (or "Free shipping" if applicable)
+- Estimated Delivery Time: A-B days
+
+**Returns:**
+- Return Period: X days
+- Return Method: Brand pickup / Self-ship
+- Refund Mode: Bank a/c / Store credit / Other
+
+🔹 **Important Simplification Rules:**
+- **Delivery Charges:** If there is a free shipping threshold, write as: "Delivery Charges: Rs. X; Free over Rs. Y".
+- **Delivery Time:** If delivery time for different locations are different, merge them into a single range (e.g., "2-5 days" + "5-7 days" → "2-7 days").
+- **Return Methods:**
+  - If the brand arranges a pickup, even if they use terms like **"scheduled courier pickup" or "reverse logistics service"**, treat it as **"Brand pickup"**.
+  - If the customer **must ship the item themselves** using their own courier or by dropping it at a store/courier location, classify it as **"Self-ship"**.
+  - If returns are **only for exchanges**, format as: "X days - exchanges only; Self-ship".
+- **Refund Mode:** If refunds are to a bank account, state "Refund in bank a/c". If store credit is used, state "Refund as store credit".
+- **No unnecessary details** should be included. Keep only what's relevant.
+- If the **brand URL does not provide full info**, supplement using the best available India-specific sources.
+- Do **not** make up information—return 'Not specified' for missing details.
+
+Ensure **clarity and structured formatting** as per the above rules.
+
+
+User Prompt:
+Find me the latest return and delivery policy of Zara from https://www.zara.com/in/ in India.
+
+Prioritize the official website (https://www.zara.com/in/) as the main source. If the required details are missing, supplement with other **reliable sources**—but ensure they are **India-specific** whenever possible.
+
+📌 **Important Guidelines:**
+- **Use the India website first** (https://www.zara.com/in/).  
+- **Do not use international sources** (e.g., .uk, .us, .sg) unless no India-specific information is available.  
+- If India's official website does not contain the full policy, **only use supplementary sources that are directly relevant to India** (e.g., Indian customer service pages, official FAQs, press releases).  
+- **Ensure accuracy and factual correctness**—do **not** make assumptions.  
+- **Follow the response format strictly**, and apply all **simplification rules** from the system instructions.
+
+
+Response Details:
+  Final Answer       : Based on the information from Zara's official Indian website and other India-specific sources, here is the latest return and delivery policy for Zara in India:
+
+**Delivery:**
+- Delivery Charges: Rs. 100; Free over Rs. 2990[1]
+- Estimated Delivery Time: 2-7 days[1]
+
+**Returns:**
+- Return Period: 30 days[1]
+- Return Method: Brand pickup[1]
+- Refund Mode: Refund in bank a/c[17]
+  Token Usage       : CompletionUsage(completion_tokens=104, prompt_tokens=607, total_tokens=711, completion_tokens_details=None, prompt_tokens_details=None, search_context_size='high')
+  Citations         :
+    [1] https://www.zara.com/in/en/help-center/HowToReturn
+    [2] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20230519.pdf
+    [3] https://m.indiacustomercare.com/zara-customer-care-number
+    [4] https://www.zara.com/us/en/help-center/HowToReturn
+    [5] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20170921.pdf
+    [6] https://www.zarafashions.in/pages/shipping-delivery
+    [7] https://www.zara.com/in/en/contact
+    [8] https://www.zara.com/us/en/help-center/Refund
+    [9] https://static.zara.net/static/pdfs/ZARA/terms-and-conditions/terms-and-conditions-ru_ZARA-20200414.pdf
+    [10] https://timesofindia.indiatimes.com/life-style/fashion/luxury/fashion/why-zara-cant-do-without-india-now/articleshow/115550871.cms
+    [11] https://www.zara.com/in/
+    [12] https://www.zara.com/ww/en/help-center/HowToReturn
+    [13] https://zaraethnic.com/pages/shipping-policy
+    [14] http://sbm.uum.edu.my/images/2022/cbm/ProceedingCBM2022withISBN.pdf
+    [15] https://www.zara.com/in/en/help-center/ReturnSpecialConditions
+    [16] https://www.zara.com/ww/en/help-center/DeliveryMethods
+    [17] https://www.zara.com/in/en/help-center/Refund
+    [18] https://www.zara.com/in/en/help-center/DeliveryRestrictions
+    [19] https://www.zara.com/in/en/help-center/HowToExchange
+    [20] https://www.zara.com/in/en/help-center/SplitOrders
+
+==================================================
+API Call Timestamp: 2025-03-20 21:23:41
+==================================================
+
+API Request Settings:
+  model               : sonar-reasoning-pro
+  temperature         : 0.1
+  max_tokens          : 200
+  top_p               : 0.3
+  frequency_penalty   : 0
+  presence_penalty    : 0
+  web_search_options  : {'search_context_size': 'high'}
+
+System Prompt:
+Your purpose is to extract the delivery and return policy of a fashion brand in India.
+
+📌 **RESPONSE FORMAT (Strictly follow this structure):**
+**Delivery:**
+- Delivery Charges: Rs. X; Free over Rs. Y (or "Free shipping" if applicable)
+- Estimated Delivery Time: A-B days
+
+**Returns:**
+- Return Period: X days
+- Return Method: Brand pickup / Self-ship
+- Refund Mode: Bank a/c / Store credit / Other
+
+🔹 **Important Simplification Rules:**
+- **Delivery Charges:** If there is a free shipping threshold, write as: "Delivery Charges: Rs. X; Free over Rs. Y".
+- **Delivery Time:** If delivery time for different locations are different, merge them into a single range (e.g., "2-5 days" + "5-7 days" → "2-7 days").
+- **Return Methods:**
+  - If the brand arranges a pickup, even if they use terms like **"scheduled courier pickup" or "reverse logistics service"**, treat it as **"Brand pickup"**.
+  - If the customer **must ship the item themselves** using their own courier or by dropping it at a store/courier location, classify it as **"Self-ship"**.
+  - If returns are **only for exchanges**, format as: "X days - exchanges only; Self-ship".
+- **Refund Mode:** If refunds are to a bank account, state "Refund in bank a/c". If store credit is used, state "Refund as store credit".
+- **No unnecessary details** should be included. Keep only what's relevant.
+- If the **brand URL does not provide full info**, supplement using the best available India-specific sources.
+- Do **not** make up information—return 'Not specified' for missing details.
+
+Ensure **clarity and structured formatting** as per the above rules.
+
+
+User Prompt:
+Find me the latest return and delivery policy of Zara from https://www.zara.com/in/ in India.
+
+Prioritize the official website (https://www.zara.com/in/) as the main source. If the required details are missing, supplement with other **reliable sources**—but ensure they are **India-specific** whenever possible.
+
+📌 **Important Guidelines:**
+- **Use the India website first** (https://www.zara.com/in/).  
+- **Do not use international sources** (e.g., .uk, .us, .sg) unless no India-specific information is available.  
+- If India's official website does not contain the full policy, **only use supplementary sources that are directly relevant to India** (e.g., Indian customer service pages, official FAQs, press releases).  
+- **Ensure accuracy and factual correctness**—do **not** make assumptions.  
+- **Follow the response format strictly**, and apply all **simplification rules** from the system instructions.
+
+
+Response Details:
+  Final Answer       : <think>
+Okay, let's tackle this query step by step. The user wants the latest return and delivery policy for Zara in India, specifically from the official website. First, I need to check the provided search results to find the relevant information. 
+
+Starting with the delivery policy. The official Zara India website (search result [2]) mentions shipping charges based on location: Tamil Nadu ₹50, Kerala, Karnataka, Andhra Pradesh, Telangana, Puducherry ₹60, and all other states ₹160. However, there's no mention of a free shipping threshold here. Wait, but looking at the PDF in search result [5], it says delivery charges won't be reimbursed, but that's about returns. Maybe the main site doesn't offer free shipping. However, another source ([13]) mentions free shipping within India, but that's from zaraethnic.com, which might be a different entity. Since the user specified to prioritize the official Zara India site (z
+  Token Usage       : CompletionUsage(completion_tokens=200, prompt_tokens=613, total_tokens=813, completion_tokens_details=None, prompt_tokens_details=None, search_context_size='high')
+  Citations         :
+    [1] https://www.zara.com/in/en/help-center/HowToReturn
+    [2] https://www.zarafashions.in/pages/shipping-delivery
+    [3] https://m.indiacustomercare.com/zara-customer-care-number
+    [4] https://www.zara.com/us/en/help-center/HowToReturn
+    [5] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20170921.pdf
+    [6] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20230519.pdf
+    [7] https://www.zara.com/in/en/contact
+    [8] https://static.zara.net/static/pdfs/UK/terms-and-conditions/terms-and-conditions-en_UK-20240201.pdf
+    [9] https://static.zara.net/static/pdfs/ZARA/terms-and-conditions/terms-and-conditions-ru_ZARA-20200414.pdf
+    [10] https://timesofindia.indiatimes.com/life-style/fashion/luxury/fashion/why-zara-cant-do-without-india-now/articleshow/115550871.cms
+    [11] http://sbm.uum.edu.my/images/2022/cbm/ProceedingCBM2022withISBN.pdf
+    [12] https://www.zara.com/ww/en/help-center/HowToReturn
+    [13] https://zaraethnic.com/pages/shipping-policy
+    [14] https://msa.maryland.gov/megafile/msa/speccol/sc5300/sc5339/000113/014000/014401/unrestricted/20120212e.pdf
+    [15] https://www.zara.com/in/en/help-center/ReturnSpecialConditions
+    [16] https://www.zara.com/ww/en/help-center/DeliveryMethods
+    [17] https://www.zara.com/in/en/help-center/Refund
+    [18] https://www.zara.com/in/en/help-center/DeliveryRestrictions
+    [19] https://www.zara.com/in/en/help-center/HowToExchange
+    [20] https://www.zara.com/in/en/help-center/SplitOrders
+
+==================================================
+API Call Timestamp: 2025-03-20 21:25:02
+==================================================
+
+API Request Settings:
+  model               : sonar-reasoning-pro
+  temperature         : 0.1
+  max_tokens          : 1000
+  top_p               : 0.3
+  frequency_penalty   : 0
+  presence_penalty    : 0
+  web_search_options  : {'search_context_size': 'high'}
+
+System Prompt:
+Your purpose is to extract the delivery and return policy of a fashion brand in India.
+
+📌 **RESPONSE FORMAT (Strictly follow this structure):**
+**Delivery:**
+- Delivery Charges: Rs. X; Free over Rs. Y (or "Free shipping" if applicable)
+- Estimated Delivery Time: A-B days
+
+**Returns:**
+- Return Period: X days
+- Return Method: Brand pickup / Self-ship
+- Refund Mode: Bank a/c / Store credit / Other
+
+🔹 **Important Simplification Rules:**
+- **Delivery Charges:** If there is a free shipping threshold, write as: "Delivery Charges: Rs. X; Free over Rs. Y".
+- **Delivery Time:** If delivery time for different locations are different, merge them into a single range (e.g., "2-5 days" + "5-7 days" → "2-7 days").
+- **Return Methods:**
+  - If the brand arranges a pickup, even if they use terms like **"scheduled courier pickup" or "reverse logistics service"**, treat it as **"Brand pickup"**.
+  - If the customer **must ship the item themselves** using their own courier or by dropping it at a store/courier location, classify it as **"Self-ship"**.
+  - If returns are **only for exchanges**, format as: "X days - exchanges only; Self-ship".
+- **Refund Mode:** If refunds are to a bank account, state "Refund in bank a/c". If store credit is used, state "Refund as store credit".
+- **No unnecessary details** should be included. Keep only what's relevant.
+- If the **brand URL does not provide full info**, supplement using the best available India-specific sources.
+- Do **not** make up information—return 'Not specified' for missing details.
+
+Ensure **clarity and structured formatting** as per the above rules.
+
+
+User Prompt:
+Find me the latest return and delivery policy of Zara from https://www.zara.com/in/ in India.
+
+Prioritize the official website (https://www.zara.com/in/) as the main source. If the required details are missing, supplement with other **reliable sources**—but ensure they are **India-specific** whenever possible.
+
+📌 **Important Guidelines:**
+- **Use the India website first** (https://www.zara.com/in/).  
+- **Do not use international sources** (e.g., .uk, .us, .sg) unless no India-specific information is available.  
+- If India's official website does not contain the full policy, **only use supplementary sources that are directly relevant to India** (e.g., Indian customer service pages, official FAQs, press releases).  
+- **Ensure accuracy and factual correctness**—do **not** make assumptions.  
+- **Follow the response format strictly**, and apply all **simplification rules** from the system instructions.
+
+
+Response Details:
+  Final Answer       : <think>
+Okay, let's tackle this query step by step. The user wants the latest return and delivery policy for Zara in India, prioritizing the official India website. First, I'll check the provided search results for the official Zara India pages. 
+
+Looking at the search results, [1] is the Zara India help center page on returns. It mentions returns can be made to any Zara store within 30 days from the shipping date for online purchases or purchase date for in-store. Home collection service is available for online returns with a ₹100 fee. That's useful for the return policy. 
+
+For delivery, [2] is a page from Zara Fashions India, but the URL seems a bit off (zarafashions.in), which might not be the official Zara site. Wait, the official Zara India site is zara.com/in, so maybe [2] is a different entity. Let me check other sources. [6] and [9] are PDFs from static.zara.net, which is likely official. [6] mentions delivery within 30 days and pickup within 10 days for store pickups. [12] is the official Zara India homepage but doesn't have detailed policies. 
+
+Wait, the user specified to use the official website first. The main official sources here are [1], [11], [15], [18], [19], which are all under zara.com/in. Let's focus on those. 
+
+From [1], delivery charges for home collection returns are ₹100. The official Zara India site's shipping info might be in another link. Wait, [2] is zarafashions.in, which might be a different site. The user said to prioritize the official site, so maybe [2] isn't reliable. Let me check if there's an official shipping policy on Zara India. 
+
+Looking at [18], the help center, there's a shipping section. But in the provided search results, [2] has shipping charges by location in India: Tamil Nadu ₹50, nearby states ₹60, others ₹160. However, since [2] is from zarafashions.in, which isn't the official Zara domain (zara.com/in), this might not be accurate. The official Zara India site's shipping info isn't directly provided in the search results. 
+
+Wait, [6] is a PDF from static.zara.net (official) mentioning delivery within 30 days and pickup within 10 days for store orders. But delivery charges aren't specified there. [11] is the refunds page on Zara India, which mentions COD refunds via bank transfer. 
+
+Since the official site's delivery charges aren't clear in the provided results, maybe I need to look for other India-specific sources. [3] is customer complaints, not helpful. [5] is a YouTube video about returns but not delivery. [14] is Zara Ethnic, a different brand. 
+
+Wait, the user said if the official site doesn't have info, use other reliable India-specific sources. Since the official site's delivery charges aren't in the provided search results, maybe [2] is a legitimate source? The URL is zarafashions.in, which might be a localized site. But I need to verify if that's an official Zara site. Since the main Zara site is zara.com/in, zarafashions.in could be a third-party seller. The user might have included it by mistake. 
+
+Given that, perhaps the official Zara India site doesn't list delivery charges in the provided snippets. In that case, I should proceed with the information available. The home collection return fee is ₹100 from [1], but delivery charges for initial shipping aren't clear. The user might have to infer that if the official site doesn't specify, maybe delivery is free over a certain amount. Wait, [1] mentions free returns to stores, but home collection has a fee. For delivery charges, since the official site isn't providing info in the given search results, maybe check other sources. 
+
+Looking at [6], the PDF mentions that for Cash on Delivery, refunds are via bank transfer. But no info on shipping costs. [9], another PDF, also doesn't mention delivery charges. 
+
+Since the official sources don't have delivery charges, but [2] (zarafashions.in) lists Tamil Nadu ₹50, Kerala, Karnataka, etc. ₹60, others ₹160, but I'm unsure if that's reliable. The user said to prioritize official sources, so maybe omit delivery charges if not found. However, the user's personalization rules say if the brand URL doesn't provide info, supplement with India-specific sources. Since zarafashions.in might not be official, perhaps it's better to leave delivery charges as 'Not specified' if the official site doesn't have it. 
+
+Wait, the
+  Token Usage       : CompletionUsage(completion_tokens=1000, prompt_tokens=613, total_tokens=1613, completion_tokens_details=None, prompt_tokens_details=None, search_context_size='high')
+  Citations         :
+    [1] https://www.zara.com/in/en/help-center/HowToReturn
+    [2] https://www.zarafashions.in/pages/shipping-delivery
+    [3] https://m.indiacustomercare.com/zara-customer-care-number
+    [4] https://www.zara.com/us/en/help-center/HowToReturn
+    [5] https://www.youtube.com/watch?v=f05R2A_AnNQ
+    [6] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20230519.pdf
+    [7] https://www.zara.com/ww/en/help-center/HowToReturn
+    [8] https://static.zara.net/static/pdfs/UK/terms-and-conditions/terms-and-conditions-en_UK-20240201.pdf
+    [9] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20170921.pdf
+    [10] https://timesofindia.indiatimes.com/life-style/fashion/luxury/fashion/why-zara-cant-do-without-india-now/articleshow/115550871.cms
+    [11] https://www.zara.com/in/en/help-center/Refund
+    [12] https://www.zara.com/in/
+    [13] https://static.zara.net/static/pdfs/ZARA/terms-and-conditions/terms-and-conditions-ru_ZARA-20200414.pdf
+    [14] https://zaraethnic.com/pages/shipping-policy
+    [15] https://www.zara.com/in/en/help-center/ReturnSpecialConditions
+    [16] http://sbm.uum.edu.my/images/2022/cbm/ProceedingCBM2022withISBN.pdf
+    [17] https://apps.apple.com/in/app/zara/id547951480
+    [18] https://www.zara.com/in/en/help-center
+    [19] https://www.zara.com/in/en/help-center/HowToExchange
+    [20] https://msa.maryland.gov/megafile/msa/speccol/sc5300/sc5339/000113/014000/014401/unrestricted/20120212e.pdf
+
+==================================================
+API Call Timestamp: 2025-03-20 21:39:26
+==================================================
+
+API Request Settings:
+  model               : sonar-pro
+  temperature         : 0.1
+  max_tokens          : 1000
+  top_p               : 0.3
+  frequency_penalty   : 0
+  presence_penalty    : 0
+  web_search_options  : {'search_context_size': 'medium'}
+
+System Prompt:
+Your purpose is to extract the delivery and return policy of a fashion brand in India.
+
+📌 **RESPONSE FORMAT (Strictly follow this structure):**
+**Delivery:**
+- Delivery Charges: Rs. X; Free over Rs. Y (or "Free shipping" if applicable)
+- Estimated Delivery Time: A-B days
+
+**Returns:**
+- Return Period: X days
+- Return Method: Brand pickup / Self-ship
+- Refund Mode: Bank a/c / Store credit / Other
+
+🔹 **Important Simplification Rules:**
+- **Delivery Charges:** If there is a free shipping threshold, write as: "Delivery Charges: Rs. X; Free over Rs. Y".
+- **Delivery Time:** If delivery time for different locations are different, merge them into a single range (e.g., "2-5 days" + "5-7 days" → "2-7 days").
+- **Return Methods:**
+  - If the brand arranges a pickup, even if they use terms like **"scheduled courier pickup" or "reverse logistics service"**, treat it as **"Brand pickup"**.
+  - If the customer **must ship the item themselves** using their own courier or by dropping it at a store/courier location, classify it as **"Self-ship"**.
+  - If returns are **only for exchanges**, format as: "X days - exchanges only; Self-ship".
+- **Refund Mode:** If refunds are to a bank account, state "Refund in bank a/c". If store credit is used, state "Refund as store credit".
+- **No unnecessary details** should be included. Keep only what's relevant.
+- If the **brand URL does not provide full info**, supplement using the best available India-specific sources.
+- Do **not** make up information—return 'Not specified' for missing details.
+
+Ensure **clarity and structured formatting** as per the above rules.
+
+
+User Prompt:
+Find me the latest return and delivery/shipping policy of Zara from https://www.zara.com/in/ in India.
+
+Prioritize the official website (https://www.zara.com/in/) as the main source. If the required details are missing, supplement with other **reliable sources**—but ensure they are **India-specific** whenever possible.
+
+📌 **Important Guidelines:**
+- **Use the India website first** (https://www.zara.com/in/).  
+- **Do not use international sources** (e.g., .uk, .us, .sg) unless no India-specific information is available.  
+- If India's official website does not contain the full policy, **only use supplementary sources that are directly relevant to India** (e.g., Indian customer service pages, official FAQs, press releases).  
+- **Ensure accuracy and factual correctness**—do **not** make assumptions.  
+- **Follow the response format strictly**, and apply all **simplification rules** from the system instructions.
+
+
+Response Details:
+  Final Answer       : Based on the information from Zara's official Indian website and other India-specific sources, here is the latest return and delivery policy for Zara in India:
+
+**Delivery:**
+- Delivery Charges: Free; Free over Rs. 0 (Free shipping for all orders)
+- Estimated Delivery Time: 2-4 days
+
+**Returns:**
+- Return Period: 30 days
+- Return Method: Brand pickup
+- Refund Mode: Refund in bank a/c
+
+Additional details:
+- Returns are free at any Zara store in India.
+- For online purchases, home collection service is available for returns.
+- Items must be in original condition with all labels intact.
+- Some items like swimwear, underwear, accessories, fragrances, watches, and cosmetics cannot be returned.
+- Refunds are processed within 14 days of return.
+  Token Usage       : CompletionUsage(completion_tokens=170, prompt_tokens=609, total_tokens=779, completion_tokens_details=None, prompt_tokens_details=None, search_context_size='medium')
+  Citations         :
+    [1] https://www.zara.com/in/en/help-center/HowToReturn
+    [2] https://www.zarafashions.in/pages/shipping-delivery
+    [3] https://www.zara.com/us/en/help-center/DeliveryMethods
+    [4] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20170921.pdf
+    [5] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20230519.pdf
+    [6] https://www.zara.com/in/en/help
+    [7] https://static.zara.net/static/pdfs/ZARA/terms-and-conditions/terms-and-conditions-ru_ZARA-20200414.pdf
+    [8] https://zaraethnic.com/pages/shipping-policy
+    [9] https://www.zara.com/in/
+    [10] https://www.zara.com/ww/en/help-center/HowToReturn
+    [11] https://www.zara.com/ww/en/help-center/DeliveryMethods
+    [12] https://www.unifiji.ac.fj/wp-content/uploads/2022/04/Dossier-1.pdf
+    [13] https://www.zara.com/in/en/help-center/ReturnSpecialConditions
+    [14] https://www.zara.com/in/en/help-center/DeliveryRestrictions
+    [15] https://www.zara.com/in/en/help-center/Refund
+
+==================================================
+API Call Timestamp: 2025-03-20 21:46:51
+==================================================
+
+API Request Settings:
+  model               : sonar-pro
+  temperature         : 0.1
+  max_tokens          : 200
+  top_p               : 0.3
+  frequency_penalty   : 0
+  presence_penalty    : 0
+  web_search_options  : {'search_context_size': 'medium'}
+
+System Prompt:
+Your purpose is to extract the delivery and return policy of a fashion brand in India.
+
+📌 **RESPONSE FORMAT (Strictly follow this structure):**
+**Delivery:**
+- Delivery Charges: Rs. X; Free over Rs. Y (or "Free shipping" if applicable)
+- Estimated Delivery Time: A-B days
+
+**Returns:**
+- Return Period: X days
+- Return Method: Brand pickup / Self-ship
+- Refund Mode: Bank a/c / Store credit / Other
+
+🔹 **Important Simplification Rules:**
+- **Delivery Charges:** If there is a free shipping threshold, write as: "Delivery Charges: Rs. X; Free over Rs. Y".
+- **Delivery Time:** If delivery time for different locations are different, merge them into a single range (e.g., "2-5 days" + "5-7 days" → "2-7 days").
+- **Return Methods:**
+  - If the brand arranges a pickup, even if they use terms like **"scheduled courier pickup" or "reverse logistics service"**, treat it as **"Brand pickup"**.
+  - If the customer **must ship the item themselves** using their own courier or by dropping it at a store/courier location, classify it as **"Self-ship"**.
+  - If returns are **only for exchanges**, format as: "X days - exchanges only; Self-ship".
+- **Refund Mode:** If refunds are to a bank account, state "Refund in bank a/c". If store credit is used, state "Refund as store credit".
+- **No unnecessary details** should be included. Keep only what's relevant.
+
+Ensure **clarity and structured formatting** as per the above rules.
+
+
+User Prompt:
+Find me the latest return and delivery/shipping policy of Zara from https://www.zara.com/in/ in India.
+
+Prioritize the official website (https://www.zara.com/in/) as the main source. If the required details are missing, supplement with other **reliable sources**—but ensure they are **India-specific** whenever possible.
+
+📌 **Important Guidelines:**
+- **Use the India website first** (https://www.zara.com/in/).  
+- **Confine your search to Google or (https://www.zara.com/in/)**.
+- **Do not use international sources** (e.g., .uk, .us, .sg) unless no India-specific information is available.   
+- **Ensure accuracy and factual correctness**—do **not** make assumptions.  
+- **Follow the response format strictly**, and apply all **simplification rules** from the system instructions.
+- Do **not** make up information—return 'Not specified' for missing details.
+
+
+Response Details:
+  Final Answer       : Based on the search results and focusing on the official Zara India website, here's the latest return and delivery policy for Zara in India:
+
+**Delivery:**
+- Delivery Charges: Rs. 100; Free over Rs. 70 (for non-discounted items only)
+- Estimated Delivery Time: 2-7 days
+
+**Returns:**
+- Return Period: 30 days
+- Return Method: Brand pickup
+- Refund Mode: Refund in bank a/c
+  Token Usage       : CompletionUsage(completion_tokens=98, prompt_tokens=567, total_tokens=665, completion_tokens_details=None, prompt_tokens_details=None, search_context_size='medium')
+  Citations         :
+    [1] https://www.zara.com/in/en/help-center/HowToReturn
+    [2] https://www.zarafashions.in/pages/shipping-delivery
+    [3] https://www.zara.com/us/en/help-center/DeliveryMethods
+    [4] https://www.parcelmonkey.com/retailer-returns/zara-returns
+    [5] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20230519.pdf
+    [6] https://www.zara.com/in/
+    [7] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20170921.pdf
+    [8] https://zaraethnic.com/pages/shipping-policy
+    [9] https://www.zara.com
+    [10] https://www.zara.com/ww/en/help-center/HowToReturn
+    [11] https://www.zara.com/ww/en/help-center/DeliveryMethods
+    [12] https://www.zara.com/in/en/help-center/ReturnSpecialConditions
+    [13] https://www.zara.com/in/en/help-center/DeliveryRestrictions
+    [14] https://www.zara.com/in/en/help-center/Refund
+    [15] https://zaraaya.com/pages/shipping-policy
+
+==================================================
+API Call Timestamp: 2025-03-20 21:58:54
+==================================================
+
+API Request Settings:
+  model               : sonar-pro
+  temperature         : 0.1
+  max_tokens          : 500
+  top_p               : 0.3
+  frequency_penalty   : 0
+  presence_penalty    : 0
+  web_search_options  : {'search_context_size': 'medium'}
+
+System Prompt:
+Your purpose is to extract the delivery and return policy of a fashion brand in India.
+
+📌 **RESPONSE FORMAT (Strictly follow this structure):**
+**Delivery:**
+- Delivery Charges: (Free / Free above Rs. X / Standard rate Rs. Y)
+- Estimated Delivery Time: (Range of days)
+
+**Returns:**
+- Return Period: (X days)
+- Return Method: (Self-shipping / In-store return / Brand pickup)
+- Refund Mode: (Bank account / Brand wallet / Store credit)
+
+**Additional Information:**
+List any relevant policies not covered above, such as exchange policies, late return fees, 
+restocking fees, membership benefits, special conditions, or return restrictions.
+
+🔹 **Important Notes:**
+- Extract only **factual details** from official sources.
+- If multiple policies exist (e.g., COD vs. prepaid), specify both.
+- If the **brand URL does not provide full info**, supplement using the best available web sources.
+- Do **not** make up information—return 'Not specified' for missing details.
+- Ensure **clarity and structured formatting**.
+
+
+User Prompt:
+Find me the latest return and delivery policy of Zara from https://www.zara.com/in/ in India.
+
+Prioritize the official website (https://www.zara.com/in/) as the main source. If the required details are missing, supplement with other **reliable sources**—but ensure they are **India-specific** whenever possible.
+
+📌 **Important Guidelines:**
+- **Use the India website first** (https://www.zara.com/in/).  
+- **Do not use international sources** (e.g., .uk, .us, .sg) unless no India-specific information is available.  
+- If India's official website does not contain the full policy, **only use supplementary sources that are directly relevant to India** (e.g., Indian customer service pages, official FAQs, press releases).  
+- **Ensure accuracy and factual correctness**—do **not** make assumptions.  
+- **Follow the response format strictly**, and include an **'Additional Information'** section for anything relevant that does not fit neatly into the structured response.  
+
+
+Response Details:
+  Final Answer       : Based on the information from Zara's official Indian website and supplementary India-specific sources, here is the latest return and delivery policy for Zara in India:
+
+**Delivery:**
+- Delivery Charges: Free for orders above Rs. 1990, standard rate not specified for orders below this amount[1]
+- Estimated Delivery Time: Maximum 30 days from the date of Order Confirmation[5]
+
+**Returns:**
+- Return Period: 30 days from the shipping date of the order[1][5]
+- Return Method: Free returns at any Zara store in India or via courier pickup (charges apply)[1][5]
+- Refund Mode: Original payment method; for Cash on Delivery, refund via bank transfer within 15 days[5]
+
+**Additional Information:**
+- Items must be in original condition with all labels attached[1][5]
+- Some items have special return conditions (e.g., swimwear, underwear, accessories cannot be returned)[13]
+- For online orders picked up in-store, pickup should be made within 10 days of Order Confirmation[5]
+- Zara reserves the right to reject returns sent outside the return period or for items not in original condition[5]
+- For Cash on Delivery orders, refunds are processed via bank transfer within 15 days of return[5]
+- Customized items and certain accessories (like jewelry, hair accessories) are non-returnable[13]
+
+[1]: https://www.zara.com/in/
+[5]: https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20230519.pdf
+[13]: https://www.zara.com/in/en/help-center/ReturnSpecialConditions
+  Token Usage       : CompletionUsage(completion_tokens=344, prompt_tokens=445, total_tokens=789, completion_tokens_details=None, prompt_tokens_details=None, search_context_size='medium')
+  Citations         :
+    [1] https://www.zara.com/in/en/help-center/HowToReturn
+    [2] https://www.zarafashions.in/pages/shipping-delivery
+    [3] https://www.zara.com/us/en/help-center/HowToReturn
+    [4] https://www.parcelmonkey.com/retailer-returns/zara-returns
+    [5] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20230519.pdf
+    [6] https://static.zara.net/static/pdfs/UK/terms-and-conditions/terms-and-conditions-en_UK-20240201.pdf
+    [7] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20170921.pdf
+    [8] https://timesofindia.indiatimes.com/life-style/fashion/luxury/fashion/why-zara-cant-do-without-india-now/articleshow/115550871.cms
+    [9] https://www.zara.com/in/
+    [10] https://www.zara.com/ww/en/help-center/HowToReturn
+    [11] https://zaraethnic.com/pages/shipping-policy
+    [12] http://sbm.uum.edu.my/images/2022/cbm/ProceedingCBM2022withISBN.pdf
+    [13] https://www.zara.com/in/en/help-center/ReturnSpecialConditions
+    [14] https://www.zara.com/ww/en/help-center/DeliveryMethods
+    [15] https://msa.maryland.gov/megafile/msa/speccol/sc5300/sc5339/000113/014000/014401/unrestricted/20120212e.pdf
+
+==================================================
+API Call Timestamp: 2025-03-20 22:04:23
+==================================================
+
+API Request Settings:
+  model               : sonar-pro
+  temperature         : 0.1
+  max_tokens          : 500
+  top_p               : 0.3
+  frequency_penalty   : 0
+  presence_penalty    : 0
+  web_search_options  : {'search_context_size': 'high'}
+
+System Prompt:
+Your purpose is to extract the delivery and return policy of a fashion brand in India.
+
+📌 **RESPONSE FORMAT (Strictly follow this structure):**
+**Delivery:**
+- Delivery Charges: (Free / Free above Rs. X / Standard rate Rs. Y)
+- Estimated Delivery Time: (Range of days)
+
+**Returns:**
+- Return Period: (X days)
+- Return Method: (Self-shipping / In-store return / Brand pickup)
+- Refund Mode: (Bank account / Brand wallet / Store credit)
+
+**Additional Information:**
+List any relevant policies not covered above, such as exchange policies, late return fees, 
+restocking fees, membership benefits, special conditions, or return restrictions.
+
+🔹 **Important Notes:**
+- Extract only **factual details** from official sources.
+- If multiple policies exist (e.g., COD vs. prepaid), specify both.
+- Do **not** make up information—return 'Not specified' for missing details.
+- Ensure **clarity and structured formatting**.
+
+
+User Prompt:
+Find me the latest return and delivery policy of Zara from https://www.zara.com/in/ in India.
+
+Prioritize the official website (https://www.zara.com/in/) and it's subdomains as the main source. If the required details are missing, supplement with other **reliable sources**—but ensure they are **India-specific** whenever possible.
+
+📌 **Important Guidelines:**
+- **Use the India website first** (https://www.zara.com/in/).  
+- **Confine your search to (https://www.zara.com/in/) and it's subdomains** as much as possible.
+- Look at pages that mention shipping, delivery, returns, exchange, FAQ, help, etc.
+- **Do not use international sources** (e.g., .uk, .us, .sg) unless no India-specific information is available.  
+- If India's official website does not contain the full policy, **only use supplementary sources that are directly relevant to India** (e.g., Indian customer service pages, official FAQs, press releases).  
+- **Ensure accuracy and factual correctness**—do **not** make assumptions.  
+- **Follow the response format strictly**, and include an **'Additional Information'** section for anything relevant that does not fit neatly into the structured response.  
+
+
+Response Details:
+  Final Answer       : Based on the information from the official Zara India website (https://www.zara.com/in/), here is the latest return and delivery policy for Zara in India:
+
+**Delivery:**
+- Delivery Charges: Free for orders above ₹2,990; Standard rate not specified
+- Estimated Delivery Time: 3-5 working days for store delivery[19]
+
+**Returns:**
+- Return Period: 30 days from the shipping confirmation date for online purchases; 30 days from the purchase date for in-store purchases[14]
+- Return Method: Free returns to any Zara store in India; Home collection service available for a fee[3][12]
+- Refund Mode: Original payment method for both online and in-store purchases; Bank transfer for cash on delivery orders[12]
+
+**Additional Information:**
+- Exchanges are only available for in-store purchases, not for online orders[14]
+- Items must be in their original condition with all labels attached[14]
+- Some items have special return conditions (e.g., swimwear, underwear, accessories, fragrances)[3]
+- For online purchases, refunds are processed within 72 hours after receiving the return, with the amount credited within 14 days[12]
+- Home collection return service costs ₹100, which is deducted from the refund[3]
+- Zara reserves the right to reject returns sent outside the return period or for items not in the same condition as received[3]
+  Token Usage       : CompletionUsage(completion_tokens=294, prompt_tokens=477, total_tokens=771, completion_tokens_details=None, prompt_tokens_details=None, search_context_size='high')
+  Citations         :
+    [1] https://www.youtube.com/watch?v=JDXqB_Yki6M
+    [2] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20230519.pdf
+    [3] https://www.zara.com/in/en/help-center/HowToReturn
+    [4] https://www.zara.com/us/en/help-center/HowToReturn
+    [5] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20170921.pdf
+    [6] https://www.zara.com/us/en/help-center/Refund
+    [7] https://www.youtube.com/watch?v=f05R2A_AnNQ
+    [8] https://zaraethnic.com/pages/shipping-policy
+    [9] https://www.zara.com/in/
+    [10] https://www.parcelmonkey.com/retailer-returns/zara-returns
+    [11] https://www.zara.com/ww/en/help-center/DeliveryMethods
+    [12] https://www.zara.com/in/en/help-center/Refund
+    [13] https://www.zara.com/in/en/help-center/DeliveryRestrictions
+    [14] https://www.zara.com/in/en/help-center/HowToExchange
+    [15] https://www.zara.com/in/en/help-center
+    [16] https://www.sikayetvar.com/en/zara-us/i-purchased-an-item-from-zara-in-a-different-country-but-now-i-realize-it-doesnt-fit-me-can-i-returnexchange-the-product-in-a-different-country-q-1019
+    [17] https://www.zara.com/in/en/help-center/OnlinePurchases
+    [18] https://www.zara.com/in/en/help-center/SplitOrders
+    [19] https://www.zara.com/in/en/help-center/DeliveryMethods
+
+==================================================
+API Call Timestamp: 2025-03-20 22:08:51
+==================================================
+
+API Request Settings:
+  model               : sonar-pro
+  temperature         : 0.1
+  max_tokens          : 500
+  top_p               : 0.3
+  frequency_penalty   : 0
+  presence_penalty    : 0
+  web_search_options  : {'search_context_size': 'high'}
+
+System Prompt:
+Your purpose is to extract the delivery and return policy of a fashion brand in India.
+
+📌 **RESPONSE FORMAT (Strictly follow this structure):**
+**Delivery:**
+- Delivery Charges: (Free / Free above Rs. X / Standard rate Rs. Y)
+- Estimated Delivery Time: (Range of days)
+
+**Returns:**
+- Return Period: (X days)
+- Return Method: (Self-shipping / In-store return / Brand pickup)
+- Refund Mode: (Bank account / Brand wallet / Store credit)
+
+**Additional Information:**
+List any relevant policies not covered above, such as exchange policies, late return fees, 
+restocking fees, membership benefits, special conditions, or return restrictions.
+
+🔹 **Important Notes:**
+- Extract only **factual details** from official sources.
+- If multiple policies exist (e.g., COD vs. prepaid), specify both.
+- Do **not** make up information—return 'Not specified' for missing details.
+- Ensure **clarity and structured formatting**.
+
+
+User Prompt:
+Find me the latest return and delivery policy of Zara from https://www.zara.com/in/ in India.
+
+Prioritize the official website (https://www.zara.com/in/) and it's subdomains as the main source. If the required details are missing, supplement with other **reliable sources**—but ensure they are **India-specific** whenever possible.
+
+📌 **Important Guidelines:**
+- **Use the India website first** (https://www.zara.com/in/).  
+- **Confine your search to (https://www.zara.com/in/) and it's subdomains** as much as possible.
+- Look at pages that mention shipping, delivery, returns, exchange, FAQ, help, etc.
+- **Do not use international sources** (e.g., .uk, .us, .sg) 
+- If India's official website does not contain the full policy, **only use supplementary sources that are directly relevant to India** (e.g., Indian customer service pages, official FAQs, press releases).  
+- **Ensure accuracy and factual correctness**—do **not** make assumptions.  
+- **Follow the response format strictly**, and include an **'Additional Information'** section for anything relevant that does not fit neatly into the structured response.  
+
+
+Response Details:
+  Final Answer       : Based on the information from Zara's official Indian website and related sources, here is the latest return and delivery policy for Zara in India:
+
+**Delivery:**
+- Delivery Charges: Free for orders over ₹1990, standard rate not specified
+- Estimated Delivery Time: 3-5 working days for store delivery[19]
+
+**Returns:**
+- Return Period: 30 days from the shipping date of the order[8]
+- Return Method: In-store return or home collection[1][8]
+- Refund Mode: Original payment method, bank transfer for COD orders[12]
+
+**Additional Information:**
+- In-store returns are free[1]
+- Home collection return costs ₹100, deducted from refund[1]
+- Items must be in original condition with all labels[8]
+- Some items have special return conditions (e.g., swimwear, underwear, accessories cannot be returned)[10]
+- Exchanges for online purchases are not available in-store; customers need to return and make a new purchase[14]
+- For store purchases, exchanges are possible for another garment, size, or color within 30 days[14]
+- Refunds are processed within 14 days maximum, depending on the bank[12]
+- Orders may be split into multiple shipments based on item availability[15]
+  Token Usage       : CompletionUsage(completion_tokens=264, prompt_tokens=469, total_tokens=733, completion_tokens_details=None, prompt_tokens_details=None, search_context_size='high')
+  Citations         :
+    [1] https://www.zara.com/in/en/help-center/HowToReturn
+    [2] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20230519.pdf
+    [3] https://www.zara.com/us/en/help-center/HowToReturn
+    [4] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20170921.pdf
+    [5] https://zaraethnic.com/pages/shipping-policy
+    [6] https://static.zara.net/static/pdfs/ZARA/terms-and-conditions/terms-and-conditions-ru_ZARA-20200414.pdf
+    [7] https://timesofindia.indiatimes.com/life-style/fashion/luxury/fashion/why-zara-cant-do-without-india-now/articleshow/115550871.cms
+    [8] https://www.zara.com/ww/en/help-center/HowToReturn
+    [9] https://www.zara.com/in/en/help-center/OrderIncidences
+    [10] https://www.zara.com/in/en/help-center/ReturnSpecialConditions
+    [11] https://www.zara.com/ww/en/help-center/DeliveryMethods
+    [12] https://www.zara.com/in/en/help-center/Refund
+    [13] https://www.zara.com/in/en/help-center/DeliveryRestrictions
+    [14] https://www.zara.com/in/en/help-center/HowToExchange
+    [15] https://www.zara.com/in/en/help-center/SplitOrders
+    [16] https://www.zara.com/in/en/help-center
+    [17] https://www.zara.com/in/en/help
+    [18] https://www.zara.com
+    [19] https://www.zara.com/in/en/help-center/DeliveryMethods
+
+==================================================
+API Call Timestamp: 2025-03-20 22:09:45
+==================================================
+
+API Request Settings:
+  model               : sonar-pro
+  temperature         : 0.1
+  max_tokens          : 500
+  top_p               : 0.3
+  frequency_penalty   : 0
+  presence_penalty    : 0
+  web_search_options  : {'search_context_size': 'high'}
+
+System Prompt:
+Your purpose is to extract the delivery and return policy of a fashion brand in India.
+
+📌 **RESPONSE FORMAT (Strictly follow this structure):**
+**Delivery:**
+- Delivery Charges: (Free / Free above Rs. X / Delivery/Shipping Charges Rs. Y)
+- Estimated Delivery Time: (Range of days)
+
+**Returns:**
+- Return Period: (X days)
+- Return Method: (Self-shipping / In-store return / Brand pickup)
+- Refund Mode: (Bank account / Brand wallet / Store credit)
+
+**Additional Information:**
+List any relevant policies not covered above, such as exchange policies, late return fees, 
+restocking fees, membership benefits, special conditions, or return restrictions.
+
+🔹 **Important Notes:**
+- Extract only **factual details** from official sources.
+- If multiple policies exist (e.g., COD vs. prepaid), specify both.
+- Do **not** make up information—return 'Not specified' for missing details.
+- Ensure **clarity and structured formatting**.
+
+
+User Prompt:
+Find me the latest return and delivery policy of Zara from https://www.zara.com/in/ in India.
+
+Prioritize the official website (https://www.zara.com/in/) and it's subdomains as the main source. If the required details are missing, supplement with other **reliable sources**—but ensure they are **India-specific** whenever possible.
+
+📌 **Important Guidelines:**
+- **Use the India website first** (https://www.zara.com/in/).  
+- **Confine your search to (https://www.zara.com/in/) and it's subdomains** as much as possible.
+- Look at pages that mention shipping, delivery, returns, exchange, FAQ, help, etc.
+- **Do not use international sources** (e.g., .uk, .us, .sg) 
+- If India's official website does not contain the full policy, **only use supplementary sources that are directly relevant to India** (e.g., Indian customer service pages, official FAQs, press releases).  
+- **Ensure accuracy and factual correctness**—do **not** make assumptions.  
+- **Follow the response format strictly**, and include an **'Additional Information'** section for anything relevant that does not fit neatly into the structured response.  
+
+
+Response Details:
+  Final Answer       : Based on the information from Zara's official Indian website and related sources, here is the latest return and delivery policy for Zara in India:
+
+**Delivery:**
+- Delivery Charges: Free for orders above ₹1990, otherwise ₹50 for standard home delivery
+- Estimated Delivery Time: 2-8 working days
+
+**Returns:**
+- Return Period: 30 days from the shipping date for online orders, 30 days from purchase date for in-store purchases
+- Return Method: Free returns at any Zara store in India or home collection service (₹100 charge deducted from refund)
+- Refund Mode: Original payment method for online purchases; for Cash on Delivery orders, refund via bank transfer within 15 days
+
+**Additional Information:**
+- Items must be in original condition with all labels attached
+- Some items have special return conditions (e.g., swimwear, underwear, accessories, fragrances cannot be returned)
+- Exchanges are only available for in-store purchases, not online orders
+- For online orders paid by cash on delivery, refunds are made via bank transfer once payment confirmation is received (minimum 5 working days)
+- Refunds are processed within 14 days, depending on the bank
+- Home collection return requests are picked up within 24-48 hours
+- Zara does not accept returns to P.O. Box addresses
+  Token Usage       : CompletionUsage(completion_tokens=275, prompt_tokens=471, total_tokens=746, completion_tokens_details=None, prompt_tokens_details=None, search_context_size='high')
+  Citations         :
+    [1] https://www.zara.com/in/en/help-center/HowToReturn
+    [2] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20230519.pdf
+    [3] https://www.zara.com/us/en/help-center/HowToReturn
+    [4] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20170921.pdf
+    [5] https://zaraethnic.com/pages/shipping-policy
+    [6] https://www.zara.com/us/en/help-center/Refund
+    [7] https://www.zara.com/ww/en/help-center/HowToReturn
+    [8] https://www.zara.com/ww/en/help-center/DeliveryMethods
+    [9] https://www.zara.com/in/en/help-center/ReturnSpecialConditions
+    [10] https://www.zara.com/in/en/help-center/DeliveryRestrictions
+    [11] https://www.zara.com/in/en/help-center/Refund
+    [12] https://www.zara.com/in/en/help-center/SplitOrders
+    [13] https://www.zara.com/in/en/help-center/HowToExchange
+    [14] https://www.zara.com/in/en/help
+    [15] https://www.zara.com/in/en/help-center/OrderIncidences
+    [16] https://www.zara.com/in/en/help-center/DeliveryMethods
+    [17] https://www.zara.com/in/en/help-center
+    [18] https://www.zara.com
+
+==================================================
+API Call Timestamp: 2025-03-20 22:14:15
+==================================================
+
+API Request Settings:
+  model               : sonar-pro
+  temperature         : 0.1
+  max_tokens          : 500
+  top_p               : 0.3
+  frequency_penalty   : 0
+  presence_penalty    : 0
+  web_search_options  : {'search_context_size': 'medium'}
+
+System Prompt:
+Your purpose is to extract the delivery and return policy of a fashion brand in India.
+
+📌 **RESPONSE FORMAT (Strictly follow this structure):**
+**Delivery:**
+- Delivery Charges: (Free / Free above Rs. X / Standard rate Rs. Y)
+- Estimated Delivery Time: (Range of days)
+
+**Returns:**
+- Return Period: (X days)
+- Return Method: (Self-shipping / In-store return / Brand pickup)
+- Refund Mode: (Bank account / Brand wallet / Store credit)
+
+**Additional Information:**
+List any relevant policies not covered above, such as exchange policies, late return fees, 
+restocking fees, membership benefits, special conditions, or return restrictions.
+
+🔹 **Important Notes:**
+- Extract only **factual details** from official sources.
+- If multiple policies exist (e.g., COD vs. prepaid), specify both.
+- If the **brand URL does not provide full info**, supplement using the best available web sources.
+- Do **not** make up information—return 'Not specified' for missing details.
+- Ensure **clarity and structured formatting**.
+
+
+User Prompt:
+Find me the latest return and delivery policy of Zara from https://www.zara.com/in/ in India.
+
+Prioritize the official website (https://www.zara.com/in/) and it's subdomains as the main source. If the required details are missing, supplement with other **reliable sources**—but ensure they are **India-specific** whenever possible.
+
+📌 **Important Guidelines:**
+- **Use the India website first** (https://www.zara.com/in/).  
+- **Confine your search to (https://www.zara.com/in/) and it's subdomains** as much as possible.
+- Look at pages that mention shipping, delivery, returns, exchange, FAQ, help, etc.
+- **Do not use international sources** (e.g., .uk, .us, .sg) 
+- If India's official website does not contain the full policy, **only use supplementary sources that are directly relevant to India** (e.g., Indian customer service pages, official FAQs, press releases).  
+- **Ensure accuracy and factual correctness**—do **not** make assumptions.  
+- **Follow the response format strictly**, and include an **'Additional Information'** section for anything relevant that does not fit neatly into the structured response.  
+
+
+Response Details:
+  Final Answer       : Based on the search results from Zara's official Indian website and related sources, here is the latest return and delivery policy for Zara in India:
+
+**Delivery:**
+- Delivery Charges: Free for orders above ₹1990, standard rate not specified
+- Estimated Delivery Time: 3-7 working days after dispatch
+
+**Returns:**
+- Return Period: 30 days from the shipping date for online orders, 30 days from purchase date for in-store purchases
+- Return Method: Free returns at any Zara store in India, or home collection service (₹100 charge deducted from refund)
+- Refund Mode: Original payment method for online purchases. For Cash on Delivery orders, refund via bank transfer within 15 days of return
+
+**Additional Information:**
+- Items must be in original condition with all labels attached
+- Some items have special return conditions (e.g., swimwear, underwear, accessories cannot be returned)
+- Exchanges can be made in-store for a different size or color
+- For online exchanges, a new order is placed and the original items must be returned
+- Refunds are processed within 14 days, depending on the bank
+- Orders may be split into multiple shipments at no extra cost to ensure faster delivery
+- Free shipping is available for orders over ₹1990 (only for non-discounted items)
+  Token Usage       : CompletionUsage(completion_tokens=274, prompt_tokens=489, total_tokens=763, completion_tokens_details=None, prompt_tokens_details=None, search_context_size='medium')
+  Citations         :
+    [1] https://www.zara.com/in/en/help-center/HowToReturn
+    [2] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20230519.pdf
+    [3] https://www.zara.com/us/en/help-center/HowToReturn
+    [4] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20170921.pdf
+    [5] https://zaraethnic.com/pages/shipping-policy
+    [6] https://www.zara.com/us/en/help-center/Refund
+    [7] https://www.zara.com/ww/en/help-center/HowToReturn
+    [8] https://www.zara.com/ww/en/help-center/DeliveryMethods
+    [9] https://www.zara.com/in/
+    [10] https://www.zara.com/in/en/help-center/ReturnSpecialConditions
+    [11] https://www.zara.com/in/en/help-center/DeliveryRestrictions
+    [12] https://www.zara.com/in/en/help-center/Refund
+    [13] https://www.zara.com/in/en/help-center/OnlinePurchases
+    [14] https://www.zara.com/us/en/help-center/HowToExchange
+    [15] https://www.zara.com/in/en/help-center/SplitOrders
+
+==================================================
+API Call Timestamp: 2025-03-20 22:15:38
+==================================================
+
+API Request Settings:
+  model               : sonar-pro
+  temperature         : 0.1
+  max_tokens          : 500
+  top_p               : 0.3
+  frequency_penalty   : 0
+  presence_penalty    : 0
+  web_search_options  : {'search_context_size': 'medium'}
+
+System Prompt:
+Your purpose is to extract the delivery and return policy of a fashion brand in India.
+
+📌 **RESPONSE FORMAT (Strictly follow this structure):**
+**Delivery:**
+- Delivery Charges: Rs. X; Free over Rs. Y (or "Free shipping" if applicable)
+- Estimated Delivery Time: A-B days
+
+**Returns:**
+- Return Period: X days
+- Return Method: Brand pickup / Self-ship
+- Refund Mode: Bank a/c / Store credit / Other
+
+🔹 **Important Simplification Rules:**
+- **Delivery Charges:** If there is a free shipping threshold, write as: "Delivery Charges: Rs. X; Free over Rs. Y".
+- **Delivery Time:** If metro and non-metro times are different, merge them into a single range (e.g., "2-5 days" + "5-7 days" → "2-7 days").
+- **Return Methods:**
+  - If the brand arranges a pickup, even if they use terms like **"scheduled courier pickup" or "reverse logistics service"**, treat it as **"Brand pickup"**.
+  - If the customer **must ship the item themselves** using their own courier or by dropping it at a store/courier location, classify it as **"Self-ship"**.
+  - If returns are **only for exchanges**, format as: "X days - exchanges only; Self-ship".
+- **Refund Mode:** If refunds are to a bank account, state "Refund in bank a/c". If store credit is used, state "Refund as store credit".
+- **No unnecessary details** should be included. Keep only what's relevant.
+- If the **brand URL does not provide full info**, supplement using the best available India-specific sources.
+- Do **not** make up information—return 'Not specified' for missing details.
+
+Ensure **clarity and structured formatting** as per the above rules.
+
+
+User Prompt:
+Find me the latest return and delivery policy of Zara from https://www.zara.com/in/ in India.
+ 
+
+
+Response Details:
+  Final Answer       : Based on the available search results, here is the latest return and delivery policy for Zara in India:
+
+**Delivery:**
+- Delivery Charges: Not specified
+- Estimated Delivery Time: 5-7 business days[2]
+
+**Returns:**
+- Return Period: 30 days from the shipping date of the order[1][6]
+- Return Method: Brand pickup / Self-ship (options available for in-store returns, drop-off points, or home collection)[1][6]
+- Refund Mode: Original payment method[13]
+
+Additional details:
+- Returns are free when using Zara's return methods[10]
+- Items must be in their original condition with all labels attached[1][6]
+- Some items have special return conditions (e.g., swimwear, underwear, accessories, fragrances)[9]
+- For cash on delivery orders, refunds are made by bank transfer[13]
+- Refunds are processed within 14 days of return[13]
+
+Please note that this information is based on the most recent available data from the search results. For the most up-to-date and accurate information, it's recommended to check directly on the official Zara India website or contact their customer service.
+  Token Usage       : CompletionUsage(completion_tokens=244, prompt_tokens=425, total_tokens=669, completion_tokens_details=None, prompt_tokens_details=None, search_context_size='medium')
+  Citations         :
+    [1] https://www.zara.com/us/en/help-center/HowToReturn
+    [2] https://www.zarafashions.in/pages/shipping-delivery
+    [3] https://static.zara.net/static/pdfs/ZARA/terms-and-conditions/terms-and-conditions-ru_ZARA-20200414.pdf
+    [4] https://www.youtube.com/watch?v=JDXqB_Yki6M
+    [5] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20230519.pdf
+    [6] https://www.zara.com/ww/en/help-center/HowToReturn
+    [7] https://www.youtube.com/watch?v=f05R2A_AnNQ
+    [8] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20170921.pdf
+    [9] https://www.zara.com/in/en/help-center/ReturnSpecialConditions
+    [10] https://www.parcelmonkey.com/retailer-returns/zara-returns
+    [11] https://timesofindia.indiatimes.com/life-style/fashion/luxury/fashion/why-zara-cant-do-without-india-now/articleshow/115550871.cms
+    [12] https://www.zara.com/in/en/help-center
+    [13] https://www.zara.com/in/en/help-center/Refund
+    [14] https://zaraethnic.com/pages/shipping-policy
+    [15] https://www.zara.com/in/en/help-center/OrderStatus
+
+==================================================
+API Call Timestamp: 2025-03-20 22:18:33
+==================================================
+
+API Request Settings:
+  model               : sonar-pro
+  temperature         : 0.1
+  max_tokens          : 500
+  top_p               : 0.3
+  frequency_penalty   : 0
+  presence_penalty    : 0
+  web_search_options  : {'search_context_size': 'high'}
+
+System Prompt:
+Your purpose is to extract the delivery and return policy of a fashion brand in India.
+
+📌 **RESPONSE FORMAT (Strictly follow this structure):**
+**Delivery:**
+- Delivery Charges: (Free / Free above Rs. X / Standard rate Rs. Y)
+- Estimated Delivery Time: (Range of days)
+
+**Returns:**
+- Return Period: (X days)
+- Return Method: (Self-shipping / In-store return / Brand pickup)
+- Refund Mode: (Bank account / Brand wallet / Store credit)
+
+**Additional Information:**
+List any relevant policies not covered above, such as exchange policies, late return fees, 
+restocking fees, membership benefits, special conditions, or return restrictions.
+
+🔹 **Important Notes:**
+- Extract only **factual details** from official sources.
+- If multiple policies exist (e.g., COD vs. prepaid), specify both.
+- If the **brand URL does not provide full info**, supplement using the best available web sources.
+- Do **not** make up information—return 'Not specified' for missing details.
+- Ensure **clarity and structured formatting**.
+
+
+User Prompt:
+Find me the latest return and delivery policy of Zara from https://www.zara.com/in/ in India.
+
+Prioritize the official website (https://www.zara.com/in/) as the main source. If the required details are missing, supplement with other **reliable sources**—but ensure they are **India-specific** whenever possible.
+
+📌 **Important Guidelines:**
+- **Use the India website first** (https://www.zara.com/in/).  
+- **Do not use international sources** (e.g., .uk, .us, .sg) unless no India-specific information is available.  
+- If India's official website does not contain the full policy, **only use supplementary sources that are directly relevant to India** (e.g., Indian customer service pages, official FAQs, press releases).  
+- **Ensure accuracy and factual correctness**—do **not** make assumptions.  
+- **Follow the response format strictly**, and include an **'Additional Information'** section for anything relevant that does not fit neatly into the structured response.  
+
+
+Response Details:
+  Final Answer       : Based on the information from Zara's official India website and supplementary sources, here is the latest return and delivery policy for Zara in India:
+
+**Delivery:**
+- Delivery Charges: Free for orders above a certain amount (not specified)
+- Estimated Delivery Time: Not specified
+
+**Returns:**
+- Return Period: 30 days from the shipping date of the order
+- Return Method: In-store return at any Zara store in India
+- Refund Mode: Original payment method
+
+**Additional Information:**
+- Returns are free when done in-store.
+- Items must be in their original condition and include all labels.
+- For online purchases paid by cash on delivery, refunds will be made via bank transfer within 15 days of the return date.
+- Some items have special return conditions:
+  - Swimwear, underwear, accessories (like gloves, scarves, belts), fragrances, watches, and cosmetics cannot be returned.
+  - Items with special packaging must be returned with the original packaging intact.
+- Exchanges for online purchases are not available in-store. Customers need to return the item and make a new purchase.
+- For in-store purchases, exchanges can be made for another garment, size, or color within 30 days of purchase.
+
+It's important to note that while this information is based on the most recent available data from Zara's India website, some specific details (like exact delivery charges or estimated delivery times) were not clearly stated on the official source.
+  Token Usage       : CompletionUsage(completion_tokens=298, prompt_tokens=445, total_tokens=743, completion_tokens_details=None, prompt_tokens_details=None, search_context_size='high')
+  Citations         :
+    [1] https://www.zara.com/in/en/help-center/HowToReturn
+    [2] https://www.zarafashions.in/pages/shipping-delivery
+    [3] https://m.indiacustomercare.com/zara-customer-care-number
+    [4] https://www.zara.com/us/en/help-center/HowToReturn
+    [5] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20170921.pdf
+    [6] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20230519.pdf
+    [7] https://www.zara.com/in/en/contact
+    [8] https://static.zara.net/static/pdfs/UK/terms-and-conditions/terms-and-conditions-en_UK-20240201.pdf
+    [9] https://www.zara.com/ww/en/help-center/HowToReturn
+    [10] https://timesofindia.indiatimes.com/life-style/fashion/luxury/fashion/why-zara-cant-do-without-india-now/articleshow/115550871.cms
+    [11] https://www.zara.com/in/
+    [12] https://www.zara.com/in/en/help-center/ReturnSpecialConditions
+    [13] https://zaraethnic.com/pages/shipping-policy
+    [14] http://sbm.uum.edu.my/images/2022/cbm/ProceedingCBM2022withISBN.pdf
+    [15] https://www.zara.com/in/en/help-center/Refund
+    [16] https://www.zara.com/ww/en/help-center/DeliveryMethods
+    [17] https://msa.maryland.gov/megafile/msa/speccol/sc5300/sc5339/000113/014000/014401/unrestricted/20120212e.pdf
+    [18] https://www.zara.com/us/en/help-center/HowToExchange
+    [19] https://www.zara.com/in/en/help-center/DeliveryRestrictions
+    [20] https://www.zara.com/in/en/help-center/HowToExchange

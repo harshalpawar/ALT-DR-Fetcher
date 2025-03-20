@@ -7,8 +7,9 @@ Really solid response. Proper citations. Let's try some other brand.
 
 Any return charges should go in the main section.
 
+Basically simplify the info a lot and make it look like the manually collected sheet.
 
-- Return Method: Online returns through H&M's returns portal[2]
-- Return Method: Free returns at any Zara store in India or home collection service[1][6]
-
-basically simplify the info a lot and make it look like the manually collected sheet
+"Yeah, this confirms what I suspected—Perplexity's retrieval behavior is inconsistent. Same prompt, same settings, different results. That means the issue isn't your code—it's the API itself."
+PPLX is searching random domains and hallucinating the answers so I'll have to try domain filtering.
+Domain filtering requires a 500$ credit purchase.
+I'll have to make something with scraping + LLM. I can discuss the filtering option later.

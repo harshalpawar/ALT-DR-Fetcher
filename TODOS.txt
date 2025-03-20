@@ -6,4 +6,15 @@
 [x] Change the program so it outputs to a nicely formatted response log instead of the shell
 [x] Engineer the initial prompt
 [x] Why won't it list citations? Fix it.
-[ ] Test and retry until satisfied
+[-] Test and retry until satisfied
+
+[x] Figure out the formatting of the data from the sheet
+[-] Use 1st AI to collect data and 2nd AI to format it
+
+OK pplx is inconsistent. New plan - 
+[-] Try domain filtering
+^ This is exclusive to tier 3 users, so scratch that.
+Gemini has grounding with search but that is paid too.
+I'll try this for now- 
+[ ] Scraping + LLM
+
