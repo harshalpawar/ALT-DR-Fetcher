@@ -46,3 +46,8 @@ You can use the system prompt to provide instructions related to style, tone, an
 
 User Prompt
 You should use the user prompt to pass in the actual query for which you need an answer for. The user prompt will be used to kick off a real-time web search to make sure the answer has the latest and the most relevant information needed.
+
+Things I can tweak - 
+Model
+Settings
+Prompt

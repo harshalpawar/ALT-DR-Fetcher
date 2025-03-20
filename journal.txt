@@ -1,0 +1,14 @@
+API Call Timestamp: 2025-03-20 14:40:01 - HM
+OK so the reason it missed the standard delivery fee is because they have an offer today!
+Citations weren't getting printed but now I know how to get them!
+
+API Call Timestamp: 2025-03-20 16:36:33 - HM
+Really solid response. Proper citations. Let's try some other brand.
+
+Any return charges should go in the main section.
+
+
+- Return Method: Online returns through H&M's returns portal[2]
+- Return Method: Free returns at any Zara store in India or home collection service[1][6]
+
+basically simplify the info a lot and make it look like the manually collected sheet

@@ -5,4 +5,5 @@
 [x] Look at full response & figure out which parts of the response are actually useful
 [x] Change the program so it outputs to a nicely formatted response log instead of the shell
 [x] Engineer the initial prompt
+[x] Why won't it list citations? Fix it.
 [ ] Test and retry until satisfied

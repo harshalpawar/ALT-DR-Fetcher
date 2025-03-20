@@ -65,3 +65,443 @@ Response Details:
 - The brand is committed to reducing plastic packaging as part of its sustainability efforts[3]
   Token Usage       : CompletionUsage(completion_tokens=285, prompt_tokens=311, total_tokens=596, completion_tokens_details=None, prompt_tokens_details=None, search_context_size='high')
   Citations         : None
+
+==================================================
+API Call Timestamp: 2025-03-20 16:08:12
+==================================================
+
+API Request Settings:
+  model               : sonar-pro
+  temperature         : 0.1
+  max_tokens          : 500
+  top_p               : 0.3
+  frequency_penalty   : 0
+  presence_penalty    : 0
+  web_search_options  : {'search_context_size': 'high'}
+
+System Prompt:
+Your purpose is to extract the delivery and return policy of a fashion brand in India.
+
+📌 **RESPONSE FORMAT (Strictly follow this structure):**
+**Delivery:**
+- Delivery Charges: (Free / Free above Rs. X / Standard rate Rs. Y)
+- Estimated Delivery Time: (Range of days)
+
+**Returns:**
+- Return Period: (X days)
+- Return Method: (Self-shipping / In-store return / Brand pickup)
+- Refund Mode: (Bank account / Brand wallet / Store credit)
+
+**Additional Information:**
+List any relevant policies not covered above, such as exchange policies, late return fees, 
+restocking fees, membership benefits, special conditions, or return restrictions.
+
+🔹 **Important Notes:**
+- Extract only **factual details** from official sources.
+- If multiple policies exist (e.g., COD vs. prepaid), specify both.
+- If the **brand URL does not provide full info**, supplement using the best available web sources.
+- Do **not** make up information—return 'Not specified' for missing details.
+- Ensure **clarity and structured formatting**.
+
+User Prompt:
+Find me the latest return and delivery policy of H&M from https://www2.hm.com/en_in/index.html in India. 
+Prioritize the official website (https://www2.hm.com/en_in/index.html), but if details are missing, check other reliable sources. 
+Follow the response format strictly and include an 'Additional Information' section for anything useful 
+that doesn't fit into the standard categories.
+
+Response Details:
+  Final Answer       : Based on the information from the official H&M India website and other reliable sources, here is the latest return and delivery policy for H&M in India:
+
+**Delivery:**
+- Delivery Charges: Free shipping above ₹1999[12]
+- Estimated Delivery Time: 2-7 days[12]
+
+**Returns:**
+- Return Period: 15 days from the date of receiving the parcel[2][5]
+- Return Method: Online returns through a returns portal[5]
+- Refund Mode: Original form of payment[5]
+
+**Additional Information:**
+- Returns must be registered online using the order number and registered email address[5]
+- Items must be unused, unwashed, and in resalable condition with labels and tags still attached[5]
+- Underwear, swimwear, pierced earrings, cosmetics, and face masks cannot be returned due to hygiene reasons[5]
+- H&M is committed to reducing plastic packaging as part of their sustainability efforts[4]
+- Customers can track their parcels online using the link provided in the shipping confirmation email[4]
+- H&M encourages customers to refer to product details and size guides to avoid returns, citing environmental concerns[11]
+- For online orders, in-store returns are not currently possible in India[5]
+  Token Usage       : CompletionUsage(completion_tokens=256, prompt_tokens=311, total_tokens=567, completion_tokens_details=None, prompt_tokens_details=None, search_context_size='high')
+  Citations         : None
+
+==================================================
+API Call Timestamp: 2025-03-20 16:36:33
+==================================================
+
+API Request Settings:
+  model               : sonar-pro
+  temperature         : 0.1
+  max_tokens          : 500
+  top_p               : 0.3
+  frequency_penalty   : 0
+  presence_penalty    : 0
+  web_search_options  : {'search_context_size': 'high'}
+
+System Prompt:
+Your purpose is to extract the delivery and return policy of a fashion brand in India.
+
+📌 **RESPONSE FORMAT (Strictly follow this structure):**
+**Delivery:**
+- Delivery Charges: (Free / Free above Rs. X / Standard rate Rs. Y)
+- Estimated Delivery Time: (Range of days)
+
+**Returns:**
+- Return Period: (X days)
+- Return Method: (Self-shipping / In-store return / Brand pickup)
+- Refund Mode: (Bank account / Brand wallet / Store credit)
+
+**Additional Information:**
+List any relevant policies not covered above, such as exchange policies, late return fees, 
+restocking fees, membership benefits, special conditions, or return restrictions.
+
+🔹 **Important Notes:**
+- Extract only **factual details** from official sources.
+- If multiple policies exist (e.g., COD vs. prepaid), specify both.
+- If the **brand URL does not provide full info**, supplement using the best available web sources.
+- Do **not** make up information—return 'Not specified' for missing details.
+- Ensure **clarity and structured formatting**.
+
+
+User Prompt:
+Find me the latest return and delivery policy of H&M from https://www2.hm.com/en_in/index.html in India.
+
+Prioritize the official website (https://www2.hm.com/en_in/index.html) as the main source. If the required details are missing, supplement with other **reliable sources**—but ensure they are **India-specific** whenever possible.
+
+📌 **Important Guidelines:**
+- **Use the India website first** (https://www2.hm.com/en_in/index.html).  
+- **Do not use international sources** (e.g., .uk, .us, .sg) unless no India-specific information is available.  
+- If India's official website does not contain the full policy, **only use supplementary sources that are directly relevant to India** (e.g., Indian customer service pages, official FAQs, press releases).  
+- **Ensure accuracy and factual correctness**—do **not** make assumptions.  
+- **Follow the response format strictly**, and include an **'Additional Information'** section for anything relevant that does not fit neatly into the structured response.  
+
+
+Response Details:
+  Final Answer       : Based on the information from the official H&M India website and other India-specific sources, here is the latest return and delivery policy for H&M in India:
+
+**Delivery:**
+- Delivery Charges: Free shipping above ₹1999[7]
+- Estimated Delivery Time: 2-7 days[7]
+
+**Returns:**
+- Return Period: 15 days from the date of receiving the parcel[2][7]
+- Return Method: Online returns through H&M's returns portal[2]
+- Refund Mode: Refund to the original mode of payment[2]
+
+**Additional Information:**
+- H&M delivers everywhere in India except containment zones[17]
+- Delivery is only available to customers who are 18 years and above with an address in India[17]
+- Swimwear, underwear, pierced earrings, cosmetics, and face masks cannot be returned due to hygiene reasons[2][19]
+- H&M is committed to reducing plastic packaging as part of their sustainability efforts[17]
+- Customers can track their parcels online using the link provided in the shipping confirmation email[17]
+- For questions and support, customers can contact H&M India's customer service at 1800-889-8000 (toll-free) or via email at customerservice.in@hm.com[9]
+  Token Usage       : CompletionUsage(completion_tokens=260, prompt_tokens=452, total_tokens=712, completion_tokens_details=None, prompt_tokens_details=None, search_context_size='high')
+  Citations         :
+    [1] https://www.fashionatingworld.com/new1-2/h-m-introduces-new-clause-in-returns-policy
+    [2] https://www2.hm.com/en_in/customer-service/returns.html
+    [3] https://www2.hm.com/en_asia3/customer-service/contact.html
+    [4] https://www2.hm.com/en_sg/customer-service/returns.html
+    [5] https://www2.hm.com/en_in/customer-service.html
+    [6] https://www.indiacustomercare.com/category/company-names/wwwhmcom
+    [7] https://www2.hm.com/en_in/index.html
+    [8] https://www2.hm.com/en_in/customer-service/legal-and-privacy/terms-and-conditions.html
+    [9] https://www2.hm.com/en_in/customer-service/contact.html
+    [10] https://www2.hm.com/en_asia5/customer-service/returns.html
+    [11] https://www2.hm.com/en_sg/customer-service/shippinganddelivery.html
+    [12] https://www2.hm.com/en_in/customer-service/contact.modal.html
+    [13] https://www2.hm.com/en_us/customer-service/returns.html
+    [14] https://www.colisexpat.com/en/delivery-shipping/india/handm/
+    [15] https://hmgroup.com/about-us/contact-us/
+    [16] https://www2.hm.com/en_ca/customer-service/returns.html
+    [17] https://www2.hm.com/en_in/customer-service/shipping-delivery.html
+    [18] https://www2.hm.com/en_us/customer-service/contact.html
+    [19] https://www2.hm.com/en_in/customer-service/return-link.html
+    [20] https://www2.hm.com/en_in/customer-service/shipping-delivery.modal.html
+
+==================================================
+API Call Timestamp: 2025-03-20 17:01:26
+==================================================
+
+API Request Settings:
+  model               : sonar-pro
+  temperature         : 0.1
+  max_tokens          : 500
+  top_p               : 0.3
+  frequency_penalty   : 0
+  presence_penalty    : 0
+  web_search_options  : {'search_context_size': 'high'}
+
+System Prompt:
+Your purpose is to extract the delivery and return policy of a fashion brand in India.
+
+📌 **RESPONSE FORMAT (Strictly follow this structure):**
+**Delivery:**
+- Delivery Charges: (Free / Free above Rs. X / Standard rate Rs. Y)
+- Estimated Delivery Time: (Range of days)
+
+**Returns:**
+- Return Period: (X days)
+- Return Method: (Self-shipping / In-store return / Brand pickup)
+- Refund Mode: (Bank account / Brand wallet / Store credit)
+
+**Additional Information:**
+List any relevant policies not covered above, such as exchange policies, late return fees, 
+restocking fees, membership benefits, special conditions, or return restrictions.
+
+🔹 **Important Notes:**
+- Extract only **factual details** from official sources.
+- If multiple policies exist (e.g., COD vs. prepaid), specify both.
+- If the **brand URL does not provide full info**, supplement using the best available web sources.
+- Do **not** make up information—return 'Not specified' for missing details.
+- Ensure **clarity and structured formatting**.
+
+
+User Prompt:
+Find me the latest return and delivery policy of Zara from https://www.zara.com/in/ in India.
+
+Prioritize the official website (https://www.zara.com/in/) as the main source. If the required details are missing, supplement with other **reliable sources**—but ensure they are **India-specific** whenever possible.
+
+📌 **Important Guidelines:**
+- **Use the India website first** (https://www.zara.com/in/).  
+- **Do not use international sources** (e.g., .uk, .us, .sg) unless no India-specific information is available.  
+- If India's official website does not contain the full policy, **only use supplementary sources that are directly relevant to India** (e.g., Indian customer service pages, official FAQs, press releases).  
+- **Ensure accuracy and factual correctness**—do **not** make assumptions.  
+- **Follow the response format strictly**, and include an **'Additional Information'** section for anything relevant that does not fit neatly into the structured response.  
+
+
+Response Details:
+  Final Answer       : Based on the information from Zara's official Indian website and supplementary sources, here's the latest return and delivery policy for Zara in India:
+
+**Delivery:**
+- Delivery Charges: ₹ 290.00 for home delivery
+- Estimated Delivery Time: 2-8 working days
+- Free shipping for orders over ₹ 2,990 (only for non-discounted items)[9]
+
+**Returns:**
+- Return Period: 30 days from the shipping date of the order[1]
+- Return Method: Free returns at any Zara store in India or home collection service[1][6]
+- Refund Mode: Original payment method used for purchase. For Cash on Delivery orders, refund via bank transfer[16]
+
+**Additional Information:**
+- Store pickup option available with 3-5 working days delivery time and free of cost[9]
+- Home collection return service costs ₹ 100, which is deducted from the refund[1]
+- Items must be in original condition with all labels attached[1]
+- Special return conditions apply for certain items like swimwear, underwear, accessories, fragrances, watches, cosmetics, and packs[18]
+- Exchanges for online purchases are not available in stores. Customers need to return the item and make a new purchase[20]
+- For in-store purchases, exchanges can be made within 30 days at any Zara store in India[20]
+  Token Usage       : CompletionUsage(completion_tokens=285, prompt_tokens=445, total_tokens=730, completion_tokens_details=None, prompt_tokens_details=None, search_context_size='high')
+  Citations         :
+    [1] https://www.zara.com/in/en/help-center/HowToReturn
+    [2] https://www.zarafashions.in/pages/shipping-delivery
+    [3] https://www.zara.com/in/en/contact
+    [4] https://www.zara.com/us/en/help-center/HowToReturn
+    [5] https://www.parcelmonkey.com/retailer-returns/zara-returns
+    [6] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20230519.pdf
+    [7] https://static.zara.net/static/pdfs/UK/terms-and-conditions/terms-and-conditions-en_UK-20240201.pdf
+    [8] https://static.zara.net/static/pdfs/IN/terms-and-conditions/terms-and-conditions-en_IN-20170921.pdf
+    [9] https://www.zara.com/in/en/help-center/DeliveryMethods
+    [10] https://www.pymnts.com/news/retail/2022/zara-limits-free-returns-to-in-store-only-reports-no-impact-on-sales/
+    [11] https://www.zara.com/in/en/help-center/RefundWithGiftCard
+    [12] https://timesofindia.indiatimes.com/life-style/fashion/luxury/fashion/why-zara-cant-do-without-india-now/articleshow/115550871.cms
+    [13] http://sbm.uum.edu.my/images/2022/cbm/ProceedingCBM2022withISBN.pdf
+    [14] https://www.zara.com/ww/en/help-center/HowToReturn
+    [15] https://zaraethnic.com/pages/shipping-policy
+    [16] https://www.zara.com/in/en/help-center/Refund
+    [17] https://www.zara.com/ww/en/help-center/DeliveryMethods
+    [18] https://www.zara.com/in/en/help-center/ReturnSpecialConditions
+    [19] https://www.zara.com/in/en/help-center/DeliveryRestrictions
+    [20] https://www.zara.com/in/en/help-center/HowToExchange
+
+==================================================
+API Call Timestamp: 2025-03-20 17:11:58
+==================================================
+
+API Request Settings:
+  model               : sonar-pro
+  temperature         : 0.1
+  max_tokens          : 500
+  top_p               : 0.3
+  frequency_penalty   : 0
+  presence_penalty    : 0
+  web_search_options  : {'search_context_size': 'high'}
+
+System Prompt:
+Your purpose is to extract the delivery and return policy of a fashion brand in India.
+
+📌 **RESPONSE FORMAT (Strictly follow this structure):**
+**Delivery:**
+- Delivery Charges: (Free / Free above Rs. X / Standard rate Rs. Y)
+- Estimated Delivery Time: (Range of days)
+
+**Returns:**
+- Return Period: (X days)
+- Return Method: (Self-shipping / In-store return / Brand pickup)
+- Refund Mode: (Bank account / Brand wallet / Store credit)
+
+**Additional Information:**
+List any relevant policies not covered above, such as exchange policies, late return fees, 
+restocking fees, membership benefits, special conditions, or return restrictions.
+
+🔹 **Important Notes:**
+- Extract only **factual details** from official sources.
+- If multiple policies exist (e.g., COD vs. prepaid), specify both.
+- If the **brand URL does not provide full info**, supplement using the best available web sources.
+- Do **not** make up information—return 'Not specified' for missing details.
+- Ensure **clarity and structured formatting**.
+
+
+User Prompt:
+Find me the latest return and delivery policy of Levi's from https://www.levi.in/ in India.
+
+Prioritize the official website (https://www.levi.in/) as the main source. If the required details are missing, supplement with other **reliable sources**—but ensure they are **India-specific** whenever possible.
+
+📌 **Important Guidelines:**
+- **Use the India website first** (https://www.levi.in/).  
+- **Do not use international sources** (e.g., .uk, .us, .sg) unless no India-specific information is available.  
+- If India's official website does not contain the full policy, **only use supplementary sources that are directly relevant to India** (e.g., Indian customer service pages, official FAQs, press releases).  
+- **Ensure accuracy and factual correctness**—do **not** make assumptions.  
+- **Follow the response format strictly**, and include an **'Additional Information'** section for anything relevant that does not fit neatly into the structured response.  
+
+
+Response Details:
+  Final Answer       : Based on the information from https://levi.in/, here is the latest return and delivery policy for Levi's in India:
+
+**Delivery:**
+- Delivery Charges: Free for orders above Rs.999; Rs. 100 for orders under Rs.999
+- Estimated Delivery Time: 2 days for major cities (New Delhi, Mumbai, Kolkata, Chennai, Bengaluru); 5-7 days for other cities in India[2]
+
+**Returns:**
+- Return Period: 15 days from the order confirmation date
+- Return Method: Online return process (not specified if self-shipping or brand pickup)
+- Refund Mode: Original form of payment within 15 days[3]
+
+**Additional Information:**
+- Returns are not available on orders placed using promo codes NORETURN and BUY2GET2. Only size exchanges are allowed for these orders.
+- For Cash on Delivery (COD) orders, refunds will be issued through bank/UPI transfers only.
+- Items must be in their original condition, unworn, unwashed, without alterations, and with all tags attached.
+- Levi's reserves the right to deny refunds if items do not meet the return policy guidelines.
+- Products bought on Levi.in cannot be returned or exchanged at Levi's retail stores.
+- For damaged items received during shipment, customers must inform within 1 week of receiving the package for a full refund[3].
+  Token Usage       : CompletionUsage(completion_tokens=280, prompt_tokens=445, total_tokens=725, completion_tokens_details=None, prompt_tokens_details=None, search_context_size='high')
+  Citations         :
+    [1] https://help.levi.com/hc/en-us/articles/360052069812-Levi-s-Return-Exchange-Policy
+    [2] https://levi.in/pages/shipping-terms
+    [3] https://levi.in/pages/returns
+    [4] https://help.levi.com/hc/en-us/articles/360052069852-How-to-Return-and-Exchange-Items-You-ve-Ordered
+    [5] https://www.levi.com/US/en_US/info/shipping
+    [6] https://levihelp.levi.com/hc/en-gb/articles/17475742923281-How-can-I-return-exchange-my-Levi-com-order
+    [7] https://levis.com.au/pages/faq-returns
+    [8] https://help.levi.com/hc/en-us/articles/360024927152-What-if-I-am-an-international-customer-who-wants-to-purchase-from-your-site
+    [9] https://www.lee.in/returns-policy
+    [10] https://levis.co.nz/pages/faq-returns
+    [11] https://play.google.com/store/apps/details?id=com.levistrauss.atlas
+    [12] https://www.leviotto.com/pages/return-policy
+    [13] https://www.investopedia.com/levi-strauss-warns-macroeconomic-conditions-will-hurt-2025-results-8783025
+    [14] https://levi.in/pages/terms-of-use
+    [15] https://levi.in/apps/return_prime
+    [16] https://www.levistrauss.com/sustainability-report/consumption/toward-zero-waste/
+    [17] https://investors.levistrauss.com/financials/annual-reports/default.aspx
+    [18] https://www.myus.com/stores/how-to-ship-levis-us/
+    [19] https://www.plazalaval.com/?p=338779023
+
+==================================================
+API Call Timestamp: 2025-03-20 17:17:09
+==================================================
+
+API Request Settings:
+  model               : sonar-pro
+  temperature         : 0.1
+  max_tokens          : 500
+  top_p               : 0.3
+  frequency_penalty   : 0
+  presence_penalty    : 0
+  web_search_options  : {'search_context_size': 'high'}
+
+System Prompt:
+Your purpose is to extract the delivery and return policy of a fashion brand in India.
+
+📌 **RESPONSE FORMAT (Strictly follow this structure):**
+**Delivery:**
+- Delivery Charges: (Free / Free above Rs. X / Standard rate Rs. Y)
+- Estimated Delivery Time: (Range of days)
+
+**Returns:**
+- Return Period: (X days)
+- Return Method: (Self-shipping / In-store return / Brand pickup)
+- Refund Mode: (Bank account / Brand wallet / Store credit)
+
+**Additional Information:**
+List any relevant policies not covered above, such as exchange policies, late return fees, 
+restocking fees, membership benefits, special conditions, or return restrictions.
+
+🔹 **Important Notes:**
+- Extract only **factual details** from official sources.
+- If multiple policies exist (e.g., COD vs. prepaid), specify both.
+- If the **brand URL does not provide full info**, supplement using the best available web sources.
+- Do **not** make up information—return 'Not specified' for missing details.
+- Ensure **clarity and structured formatting**.
+
+
+User Prompt:
+Find me the latest return and delivery policy of Snitch from https://snitch.com in India.
+
+Prioritize the official website (https://snitch.com) as the main source. If the required details are missing, supplement with other **reliable sources**—but ensure they are **India-specific** whenever possible.
+
+📌 **Important Guidelines:**
+- **Use the India website first** (https://snitch.com).  
+- **Do not use international sources** (e.g., .uk, .us, .sg) unless no India-specific information is available.  
+- If India's official website does not contain the full policy, **only use supplementary sources that are directly relevant to India** (e.g., Indian customer service pages, official FAQs, press releases).  
+- **Ensure accuracy and factual correctness**—do **not** make assumptions.  
+- **Follow the response format strictly**, and include an **'Additional Information'** section for anything relevant that does not fit neatly into the structured response.  
+
+
+Response Details:
+  Final Answer       : Based on the information from the official Snitch website and supplementary India-specific sources, here is the latest return and delivery policy for Snitch in India:
+
+**Delivery:**
+- Delivery Charges: Free shipping (no minimum order value specified)
+- Estimated Delivery Time: 2-5 business days[2]
+
+**Returns:**
+- Return Period: 7 days[1][9]
+- Return Method: Self-shipping (reverse pickup available)[3]
+- Refund Mode: Original payment method for prepaid orders; SNITCH wallet for COD orders[1]
+
+**Additional Information:**
+- Returns are free, but a reverse shipment fee of up to Rs 100 may be charged for excessive returns[1][3]
+- Items must be unused, unwashed, undamaged, and returned with original packing and tags[3]
+- Certain items like accessories, sunglasses, perfumes, masks, and innerwear are non-returnable for hygiene reasons[1]
+- SnitchX members have an extended return period of 30 days[1]
+- Items purchased during special sales (e.g., BOGO offers) are ineligible for returns[1]
+- Defective, incorrect, or damaged items must be reported within 24 hours of delivery[1]
+- For exchanges, customers receive a credit note valid for 3 months to purchase at the store[5]
+- During promotional offers or sales, exchanges or returns are not allowed for merchandise sold[5]
+  Token Usage       : CompletionUsage(completion_tokens=292, prompt_tokens=437, total_tokens=729, completion_tokens_details=None, prompt_tokens_details=None, search_context_size='high')
+  Citations         :
+    [1] https://www.snitch.com/return-exchange-policy
+    [2] https://www.snitch.co.in/pages/shipping
+    [3] https://www.snitch.com/contact-us
+    [4] https://images.transparencycdn.org/images/2005_GCR_Construction_EN.pdf
+    [5] https://www.snitch.co.in/pages/snitch-store-returns-exchange
+    [6] https://play.google.com/store/apps/details?id=co.shopney.snitch
+    [7] https://www.indiacustomercare.com/snitch-customer-care-no
+    [8] https://original-ufdc.uflib.ufl.edu/UF00024160/01015
+    [9] https://www.snitch.co.in/pages/return-exchange-policy
+    [10] https://www.snitch.com/men-shirts/grey-checks-slim-fit-shirt-4mss3598-01/8546817114274/buy
+    [11] https://www.snitch.com/men-perfumes/buy
+    [12] https://mhec.maryland.gov/publications/Documents/Research/AnnualReports/2017_CulturalDiversity_vol2.pdf
+    [13] https://www.snitch.com
+    [14] https://www.snitch.com/men-perfumes/evoke/8013961953442/buy
+    [15] https://www.snitch.com/men-shirts/navy-solid-oxford-shirt-4mss3563-03/8536886739106/buy
+    [16] https://www.tga.gov.au/sites/default/files/consultation-submission-sports-supplements-online-survey.xlsx
+    [17] https://www.snitch.com/men-shirts/doric-red-shirt/7905472381090/buy
+    [18] https://www.snitch.com/men-jeans/navy-washed-bootcut-jeans-4msd3902-01/8580606820514/buy
+    [19] https://www.snitch.com/men-shirts/black-self-design-slim-fit-shirt-4mss3874-03/8569378242722/buy
+    [20] https://dspace.mit.edu/bitstream/handle/1721.1/128634/1221003830-MIT.pdf?sequence=1&isAllowed=y
