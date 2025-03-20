@@ -1,0 +1,48 @@
+RESPONSE STRUCTURE
+Delivery
+Delivery Charges: 
+Shipping Cost: 
+Estimated Delivery Time: 
+
+Returns
+Return Period: 
+Return Method: 
+Refund Mode: 
+
+PPX CONFIG 
+response = client.chat.completions.create(
+    model="sonar-pro",
+    messages=messages,
+    num_results=5,  # Fetch data from 5 search results for accuracy
+    max_tokens=500,  # Allow longer responses
+    temperature=0.1,  # Keep it factual
+    top_p=0.3  # Reduce randomness
+)
+
+search_domain_filter (Limit Search Domains)
+search_recency_filter (Filter by Recency)
+web_search_options.search_context_size (Control Search Depth)
+
+
+response.choices[0].message.content (Final Answer)
+response.choices[0] (Full Choice Object)
+response.usage (Token Costs & API Usage)
+response.choices[0].citations (List of Sources & Web Pages)
+Print Everything (response.dict())
+
+# chat completion with streaming
+response_stream = client.chat.completions.create(
+    model="sonar-pro",
+    messages=messages,
+    stream=True,
+)
+for response in response_stream:
+    print(response)
+    
+Get response in json format - https://docs.perplexity.ai/guides/structured-outputs
+
+System Prompt
+You can use the system prompt to provide instructions related to style, tone, and language of the response. The real-time search component of our models does not attend to the system prompt.
+
+User Prompt
+You should use the user prompt to pass in the actual query for which you need an answer for. The user prompt will be used to kick off a real-time web search to make sure the answer has the latest and the most relevant information needed.

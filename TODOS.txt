@@ -1,0 +1,8 @@
+[x] Make a test call to pplx
+[x] Read the pplx docs
+[x] Figure out configuration for pplx
+[x] Write actual script
+[x] Look at full response & figure out which parts of the response are actually useful
+[x] Change the program so it outputs to a nicely formatted response log instead of the shell
+[x] Engineer the initial prompt
+[ ] Test and retry until satisfied

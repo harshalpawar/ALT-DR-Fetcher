@@ -1,0 +1,67 @@
+
+==================================================
+API Call Timestamp: 2025-03-20 14:40:01
+==================================================
+
+API Request Settings:
+  model               : sonar-pro
+  temperature         : 0.1
+  max_tokens          : 500
+  top_p               : 0.3
+  frequency_penalty   : 0
+  presence_penalty    : 0
+  web_search_options  : {'search_context_size': 'high'}
+
+System Prompt:
+Your purpose is to extract the delivery and return policy of a fashion brand in India.
+
+📌 **RESPONSE FORMAT (Strictly follow this structure):**
+**Delivery:**
+- Delivery Charges: (Free / Free above Rs. X / Standard rate Rs. Y)
+- Estimated Delivery Time: (Range of days)
+
+**Returns:**
+- Return Period: (X days)
+- Return Method: (Self-shipping / In-store return / Brand pickup)
+- Refund Mode: (Bank account / Brand wallet / Store credit)
+
+**Additional Information:**
+List any relevant policies not covered above, such as exchange policies, late return fees, 
+restocking fees, membership benefits, special conditions, or return restrictions.
+
+🔹 **Important Notes:**
+- Extract only **factual details** from official sources.
+- If multiple policies exist (e.g., COD vs. prepaid), specify both.
+- If the **brand URL does not provide full info**, supplement using the best available web sources.
+- Do **not** make up information—return 'Not specified' for missing details.
+- Ensure **clarity and structured formatting**.
+
+User Prompt:
+Find me the latest return and delivery policy of H&M from https://www2.hm.com/en_in/index.html in India. 
+Prioritize the official website (https://www2.hm.com/en_in/index.html), but if details are missing, check other reliable sources. 
+Follow the response format strictly and include an 'Additional Information' section for anything useful 
+that doesn't fit into the standard categories.
+
+Response Details:
+  Final Answer       : Based on the information from the official H&M India website and supplementary sources, here is the latest delivery and return policy for H&M in India:
+
+**Delivery:**
+- Delivery Charges: Free shipping above ₹1999[9]
+- Estimated Delivery Time: 2-7 days[9]
+
+**Returns:**
+- Return Period: 15 days from the date of receipt[4][9]
+- Return Method: Online returns through returns portal[4]
+- Refund Mode: Original form of payment[4]
+
+**Additional Information:**
+- Returns must be registered online using the order number and registered email address[4]
+- Items must be in resalable and unused condition, with labels and tags still attached[4]
+- Swimwear, underwear, pierced earrings, cosmetics, and face masks cannot be returned due to hygiene reasons[4]
+- H&M HOME items purchased online cannot be returned in stores and must be returned through the returns portal only[4]
+- For pay-on-delivery orders, bank details must be listed in the H&M account for refund; no cash refunds are provided[4]
+- Refunds are processed within 30 days from the date H&M receives the returned items[4]
+- H&M provides a shipping confirmation email with delivery details and a link to track the parcel online[3]
+- The brand is committed to reducing plastic packaging as part of its sustainability efforts[3]
+  Token Usage       : CompletionUsage(completion_tokens=285, prompt_tokens=311, total_tokens=596, completion_tokens_details=None, prompt_tokens_details=None, search_context_size='high')
+  Citations         : None
