@@ -2,11 +2,15 @@
     "brands": [
         {
             "name": "H&M",
-            "url": "hm.com/in"
+            "url": "www2.hm.com/en_in/",
+            "localPath": "C:\\Users\\harsh\\ALT\\ALT-DR-Fetcher\\jina\\data\\brands\\H&M_data.json",
+            "response": "**Delivery:**\n- Delivery Charges: Rs. 149\n- Estimated Delivery Time: 2-7 days\n\n**Returns:**\n- Return Period: 15 days\n- Return Method: Brand pickup\n- Refund Mode: Refund in bank a/c\n"
         },
         {
             "name": "Zara",
-            "url": "zara.com/in/"
+            "url": "zara.com/in/",
+            "localPath": "C:\\Users\\harsh\\ALT\\ALT-DR-Fetcher\\jina\\data\\brands\\Zara_data.json",
+            "response": "**Delivery:**\n- Delivery Charges: Rs. 290.00; Free over Rs. 2,990\n- Estimated Delivery Time: 2-8 days\n\n**Returns:**\n- Return Period: 30 days\n- Return Method: Brand pickup (Rs. 100 pickup charges) / Self-ship\n- Refund Mode: Refund in bank a/c\n"
         },
         {
             "name": "Nike",
@@ -14,15 +18,21 @@
         },
         {
             "name": "Adidas",
-            "url": "adidas.co.in/"
+            "url": "adidas.co.in/",
+            "localPath": "C:\\Users\\harsh\\ALT\\ALT-DR-Fetcher\\jina\\data\\brands\\Adidas_data.json",
+            "response": "Based on the provided context, I am unable to extract the delivery and return policy for Adidas. The provided text is empty.\n"
         },
         {
             "name": "Levi's",
-            "url": "levi.in/"
+            "url": "levi.in/",
+            "localPath": "C:\\Users\\harsh\\ALT\\ALT-DR-Fetcher\\jina\\data\\brands\\Levi's_data.json",
+            "response": "I am sorry, I don't have access to the internet to extract the information from a specific web page."
         },
         {
             "name": "Myntra",
-            "url": "myntra.com/"
+            "url": "myntra.com/",
+            "localPath": "C:\\Users\\harsh\\ALT\\ALT-DR-Fetcher\\jina\\data\\brands\\Myntra_data.json",
+            "response": "I am sorry, I do not have access to web pages to extract the information.\n"
         },
         {
             "name": "Ajio",
@@ -33,8 +43,12 @@
             "url": "uniqlo.com/in/en/"
         },
         {
-            "name": "Snitch",
-            "url": "snitch.com"
+            "name": "Jack & Jones",
+            "url": "jackjones.in/"
+        },
+        {
+            "name": "Vero Moda",
+            "url": "veromoda.in/"
         }
     ]
 }

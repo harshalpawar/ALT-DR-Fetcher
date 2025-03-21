@@ -39,3 +39,6 @@ So now -
 [x] jinaSearch to search for links
 [ ] jinaFormat to make the pages LLM friendly 
 [ ] geminiFormat to get the final response
+
+Try grounding with search on Gemini
+Brave API + some filtering

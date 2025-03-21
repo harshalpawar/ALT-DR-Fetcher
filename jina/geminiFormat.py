@@ -1,106 +1,114 @@
+# import sys
+# import os
+# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+
 from google import genai
 from google.genai import types
 import os
 import json
-import sys
 from dotenv import load_dotenv
+from paths import BRAND_LIST_FILE, ENV_FILE
 
 # Load environment variables from parent directory
-load_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env'))
+load_dotenv(ENV_FILE)
 
-# Load brand dictionary from JSON file
-brand_list_path = os.path.join(os.path.dirname(__file__), 'data', 'brand_list.json')
-with open(brand_list_path, 'r') as f:
-    brand_dict = json.load(f)['brands']
+def getBrand(brand_name):
+    # Load brand dictionary from JSON file
+    with open(BRAND_LIST_FILE, 'r') as f:
+        brand_dict = json.load(f)['brands']
 
-# Select a brand dynamically
-brand_name = sys.argv[1] if len(sys.argv) > 1 else "Levi's"  # Use command line argument or default
-brand = next((b for b in brand_dict if b["name"] == brand_name), None)
+    brand = next((b for b in brand_dict if b["name"] == brand_name), None)
+    return brand
 
-# Check if brand exists, otherwise exit
-if not brand:
-    print(f"❌ Brand '{brand_name}' not found in brand_dict. Exiting...")
-    sys.exit(1)  # Exit program with an error code
+def getResponse(brand):
+    if brand is None:
+        print(f"❌ Brand not found")
+        return None
 
-# Get the local path of the brand's JSON file
-brand_json_path = brand.get("localPath")
+    if not brand['localPath'] or not os.path.exists(brand['localPath']):
+        print(f"❌ Brand JSON file not found for {brand['name']}")
+        return None
 
-if not brand_json_path or not os.path.exists(brand_json_path):
-    print(f"❌ Brand JSON file not found for {brand_name}")
-    sys.exit(1)
+    # Read the brand's JSON file
+    with open(brand['localPath'], 'r', encoding='utf-8') as f:
+        brand_data = json.load(f)
 
-# Read the brand's JSON file
-with open(brand_json_path, 'r', encoding='utf-8') as f:
-    brand_data = json.load(f)
+    # Combine all page_text content into a single string
+    content_prompt = "\n\n".join([
+        f"URL: {item['url']}\nTitle: {item['title']}\nContent: {item['content']}" 
+        for item in brand_data.get('page_text', [])
+    ])
 
-# Combine all page_text content into a single string
-content_prompt = "\n\n".join([
-    f"URL: {item['url']}\nTitle: {item['title']}\nContent: {item['content']}" 
-    for item in brand_data.get('page_text', [])
-])
+    # Get API key from environment variable
+    client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
-# Get API key from environment variable
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+    # Define System Prompt
+    system_prompt = """Your purpose is to extract the delivery and return policy of a fashion brand in India.
 
-# Define System Prompt
-system_prompt = """Your purpose is to extract the delivery and return policy of a fashion brand in India.
+    📌 **RESPONSE FORMAT (Strictly follow this structure):**
+    **Delivery:**
+    - Delivery Charges: Rs. X; Free over Rs. Y (or "Free shipping" if applicable)
+    - Estimated Delivery Time: Within B days OR A-B days (if a range is specified)
 
-📌 **RESPONSE FORMAT (Strictly follow this structure):**
-**Delivery:**
-- Delivery Charges: Rs. X; Free over Rs. Y (or "Free shipping" if applicable)
-- Estimated Delivery Time: within B days OR A-B days (if a range is specified)
+    **Returns:**
+    - Return Period: X days
+    - Return Method: Brand pickup / Self-ship **Mention the return pickup charges if any**.
+    - Refund Mode: Bank a/c / Store credit / Other
 
-**Returns:**
-- Return Period: X days
-- Return Method: Brand pickup / Self-ship **Mention the return pickup charges if any**.
-- Refund Mode: Bank a/c / Store credit / Other
+    🔹 **Important Simplification Rules:**
+    - **Delivery Charges:** If there is a free shipping threshold, write as: "Delivery Charges: Rs. X; Free over Rs. Y".
+    - **Return Methods:**
+    - If the brand arranges a pickup, even if they use terms like **"scheduled courier pickup" or "reverse logistics service"**, treat it as **"Brand pickup"**. **Mention the return pickup charges if any**.
+    - If the customer **must ship the item themselves** using their own courier or by dropping it at a store/courier location, classify it as **"Self-ship"**.
+    - If returns are **only for exchanges**, format as: "X days - exchanges only". If exchanges are size only, then mention it as "X days - exchanges only (size only)".
+    - **Refund Mode:** If refunds are to a bank account, state "Refund in bank a/c". If store credit is used, state "Refund as store credit".
+    - **No unnecessary details** should be included. Keep only what's relevant.
+    - Do **not** make up information—return 'Not specified' for missing details.
 
-🔹 **Important Simplification Rules:**
-- **Delivery Charges:** If there is a free shipping threshold, write as: "Delivery Charges: Rs. X; Free over Rs. Y".
-- **Delivery Time:** If there are different delivery times for different locations, merge them into a single range (e.g., "2-5 days" + "5-7 days" → "2-7 days").
-- **Return Methods:**
-  - If the brand arranges a pickup, even if they use terms like **"scheduled courier pickup" or "reverse logistics service"**, treat it as **"Brand pickup"**. **Mention the return pickup charges if any**.
-  - If the customer **must ship the item themselves** using their own courier or by dropping it at a store/courier location, classify it as **"Self-ship"**.
-  - If returns are **only for exchanges**, format as: "X days - exchanges only". If exchanges are size only, then mention it as "X days - exchanges only (size only)".
-- **Refund Mode:** If refunds are to a bank account, state "Refund in bank a/c". If store credit is used, state "Refund as store credit".
-- **No unnecessary details** should be included. Keep only what's relevant.
-- Do **not** make up information—return 'Not specified' for missing details.
+    Ensure **clarity and structured formatting** as per the above rules.
+    """
 
-Ensure **clarity and structured formatting** as per the above rules.
-"""
+    # Prepare the user prompt
+    user_prompt = f"""Extract the delivery and return policy for {brand['name']} from the following web page contents:
 
-# Prepare the user prompt
-user_prompt = f"""Extract the delivery and return policy for {brand_name} from the following web page contents:
+    {content_prompt}
 
-{content_prompt}
+    Follow the response format and simplification rules strictly."""
 
-Follow the response format and simplification rules strictly."""
+    # Generate content
+    response = client.models.generate_content(
+        model="gemini-2.0-flash", 
+        config=types.GenerateContentConfig(
+            system_instruction=system_prompt
+        ),
+        contents=user_prompt
+    )
 
-# Generate content
-response = client.models.generate_content(
-    model="gemini-2.0-flash", 
-    config=types.GenerateContentConfig(
-        system_instruction=system_prompt
-    ),
-    contents=user_prompt
-)
+    # Print the response
+    print(response.text)
+    # Update the brand's entry in brand_list.json with the Gemini response
+    try:
+        with open(BRAND_LIST_FILE, 'r', encoding='utf-8') as f:
+            brand_list = json.load(f)
+        
+        for brand_entry in brand_list['brands']:
+            if brand_entry['name'] == brand['name']:
+                brand_entry['response'] = response.text
+                break
+        
+        with open(BRAND_LIST_FILE, 'w', encoding='utf-8') as f:
+            json.dump(brand_list, f, indent=4)
+        
+        print(f"Updated brand_list.json with Gemini response for {brand['name']}")
 
-# Print the response
-print(response.text)
-# Update the brand's entry in brand_list.json with the Gemini response
-try:
-    with open(brand_list_path, 'r', encoding='utf-8') as f:
-        brand_list = json.load(f)
-    
-    for brand_entry in brand_list['brands']:
-        if brand_entry['name'] == brand['name']:
-            brand_entry['response'] = response.text
-            break
-    
-    with open(brand_list_path, 'w', encoding='utf-8') as f:
-        json.dump(brand_list, f, indent=4)
-    
-    print(f"Updated brand_list.json with Gemini response for {brand['name']}")
+    except Exception as e:
+        print(f"Error updating brand_list.json with Gemini response: {e}")
 
-except Exception as e:
-    print(f"Error updating brand_list.json with Gemini response: {e}")
+def main():
+    brand_name = ""
+    brand = getBrand(brand_name)
+    getResponse(brand)
+
+if __name__ == "__main__":
+    main() 
