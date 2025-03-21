@@ -14,7 +14,7 @@ with open(brand_list_path, 'r') as f:
     brand_dict = json.load(f)['brands']
 
 # Select a brand dynamically
-brand_name = "Levi's"  # Change this to the brand you want
+brand_name = sys.argv[1] if len(sys.argv) > 1 else "Levi's"  # Use command line argument or default
 brand = next((b for b in brand_dict if b["name"] == brand_name), None)
 
 # Check if brand exists, otherwise exit
@@ -48,7 +48,7 @@ system_prompt = """Your purpose is to extract the delivery and return policy of 
 📌 **RESPONSE FORMAT (Strictly follow this structure):**
 **Delivery:**
 - Delivery Charges: Rs. X; Free over Rs. Y (or "Free shipping" if applicable)
-- Estimated Delivery Time: A-B days
+- Estimated Delivery Time: within B days OR A-B days (if a range is specified)
 
 **Returns:**
 - Return Period: X days
@@ -57,11 +57,11 @@ system_prompt = """Your purpose is to extract the delivery and return policy of 
 
 🔹 **Important Simplification Rules:**
 - **Delivery Charges:** If there is a free shipping threshold, write as: "Delivery Charges: Rs. X; Free over Rs. Y".
-- **Delivery Time:** If metro and non-metro times are different, merge them into a single range (e.g., "2-5 days" + "5-7 days" → "2-7 days").
+- **Delivery Time:** If there are different delivery times for different locations, merge them into a single range (e.g., "2-5 days" + "5-7 days" → "2-7 days").
 - **Return Methods:**
   - If the brand arranges a pickup, even if they use terms like **"scheduled courier pickup" or "reverse logistics service"**, treat it as **"Brand pickup"**. **Mention the return pickup charges if any**.
   - If the customer **must ship the item themselves** using their own courier or by dropping it at a store/courier location, classify it as **"Self-ship"**.
-  - If returns are **only for exchanges**, format as: "X days - exchanges only; Self-ship".
+  - If returns are **only for exchanges**, format as: "X days - exchanges only". If exchanges are size only, then mention it as "X days - exchanges only (size only)".
 - **Refund Mode:** If refunds are to a bank account, state "Refund in bank a/c". If store credit is used, state "Refund as store credit".
 - **No unnecessary details** should be included. Keep only what's relevant.
 - Do **not** make up information—return 'Not specified' for missing details.
@@ -87,3 +87,20 @@ response = client.models.generate_content(
 
 # Print the response
 print(response.text)
+# Update the brand's entry in brand_list.json with the Gemini response
+try:
+    with open(brand_list_path, 'r', encoding='utf-8') as f:
+        brand_list = json.load(f)
+    
+    for brand_entry in brand_list['brands']:
+        if brand_entry['name'] == brand['name']:
+            brand_entry['response'] = response.text
+            break
+    
+    with open(brand_list_path, 'w', encoding='utf-8') as f:
+        json.dump(brand_list, f, indent=4)
+    
+    print(f"Updated brand_list.json with Gemini response for {brand['name']}")
+
+except Exception as e:
+    print(f"Error updating brand_list.json with Gemini response: {e}")

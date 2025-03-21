@@ -14,7 +14,7 @@ with open(brand_list_path, 'r') as f:
     brand_dict = json.load(f)['brands']
 
 # Select a brand dynamically
-brand_name = "Levi's"  # Change this to the brand you want
+brand_name = sys.argv[1] if len(sys.argv) > 1 else "Levi's"  # Use command line argument or default
 brand = next((b for b in brand_dict if b["name"] == brand_name), None)
 
 # Check if brand exists, otherwise exit
