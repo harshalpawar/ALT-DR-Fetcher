@@ -1,0 +1,41 @@
+{
+    "brands": [
+        {
+            "name": "H&M",
+            "url": "hm.com/in"
+        },
+        {
+            "name": "Zara",
+            "url": "zara.com/in/"
+        },
+        {
+            "name": "Nike",
+            "url": "nike.com/in/"
+        },
+        {
+            "name": "Adidas",
+            "url": "adidas.co.in/"
+        },
+        {
+            "name": "Levi's",
+            "url": "levi.in/",
+            "localPath": "C:\\Users\\harsh\\ALT\\ALT-DR-Fetcher\\jina\\data\\brands\\Levi's_data.json"
+        },
+        {
+            "name": "Myntra",
+            "url": "myntra.com/"
+        },
+        {
+            "name": "Ajio",
+            "url": "ajio.com/"
+        },
+        {
+            "name": "Uniqlo",
+            "url": "uniqlo.com/in/en/"
+        },
+        {
+            "name": "Snitch",
+            "url": "snitch.com"
+        }
+    ]
+}

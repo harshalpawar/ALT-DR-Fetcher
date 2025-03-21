@@ -11,10 +11,31 @@
 [x] Figure out the formatting of the data from the sheet
 [-] Use 1st AI to collect data and 2nd AI to format it
 
-OK pplx is inconsistent. New plan - 
+OK pplx is inconsistent. 
+New plan - 
 [-] Try domain filtering
 ^ This is exclusive to tier 3 users, so scratch that.
+Problems with pplx - no domain filtering, can't extract info reliably, doesn't follow prompts, hallucinates.
 Gemini has grounding with search but that is paid too.
-I'll try this for now- 
-[ ] Scraping + LLM
 
+Options - 
+Try Gemini and other AI search tools
+Scrape the pages and extract with LLM
+Integrate the LLM into the scraping
+Find a tool which does most of the work - research
+
+TEST this immediately
+s.jina.ai -> get the urls -> r.jina.ai -> llm -> output
+^ this looks really promising
+
+Stress test it. I only learn new information when something goes wrong.
+Have to search for delivery and returns seperately.
+
+Ask Abbas which AI is optimal for extracting info from a lot of data.
+Is Jina ok for us to use? Should we get their pro keys?
+Refine prompt, get responses, get feedback from Anshita.
+
+So now - 
+[x] jinaSearch to search for links
+[ ] jinaFormat to make the pages LLM friendly 
+[ ] geminiFormat to get the final response

@@ -78,8 +78,15 @@ system_prompt = """Your purpose is to extract the delivery and return policy of 
 
 Ensure **clarity and structured formatting** as per the above rules.
 """
+
+
 If Perplexity won’t reliably pull from the brand site, we stop relying on it for search and instead:
 
 Manually or programmatically get the correct URL for each brand’s returns/delivery page.
 Scrape that page directly for content.
 Pass that content to Perplexity (or another LLM) just for formatting.
+
+
+Search keywords for 
+delivery - delivery shipping terms policy faq help
+returns - returns refund exchange pickup terms policy faq help

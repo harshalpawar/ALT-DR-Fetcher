@@ -13,3 +13,17 @@ Basically simplify the info a lot and make it look like the manually collected s
 PPLX is searching random domains and hallucinating the answers so I'll have to try domain filtering.
 Domain filtering requires a 500$ credit purchase.
 I'll have to make something with scraping + LLM. I can discuss the filtering option later.
+
+🔍 Structured Response:
+ Here is the formatted response based on the search results:
+
+**Delivery:**
+- Delivery Charges: Rs. 290; Free over Rs. 2,990 for non-discounted items[3]
+- Estimated Delivery Time: 2-8 days[3]
+
+**Returns:**
+- Return Period: 30 days[1]
+- Return Method: Brand pickup (Rs. 100 charge)[1] or Free in-store returns[1]
+- Refund Mode: Original payment method[2]
+
+pplx is no good for extraction + formatting because it doesn't follow instructions and runs searches on top anyway
