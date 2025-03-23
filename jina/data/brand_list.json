@@ -14,7 +14,9 @@
         },
         {
             "name": "Nike",
-            "url": "nike.com/in/"
+            "url": "nike.com/in/",
+            "localPath": "C:\\Users\\harsh\\ALT\\ALT-DR-Fetcher\\jina\\data\\brands\\Nike_data.json",
+            "response": "**Delivery:**\n- Delivery Charges: Rs. 1250.00; Free over Rs. 1250.00\n- Estimated Delivery Time: 4-7 days\n\n**Returns:**\n- Return Period: 30 days\n- Return Method: Brand pickup\n- Refund Mode: Not specified\n"
         },
         {
             "name": "Adidas",

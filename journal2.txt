@@ -1,0 +1,56 @@
+Refactor previous project to be clean and modular
+Implement error handling and logging
+Implement a debugging mode which asks if I want to continue
+Log token usage and prevent repititive calls
+Handle data properly
+Test on 10-20 brands
+Update the excel sheet and get feedback
+
+Include the homepage and 1 product page for each brand
+Try to do everything in search itself.
+If search fails, use reader.
+
+Find the perfect jina/gemini config, prompt, keywords 
+
+Check out other jina tools
+I think I'm going to run into problems with scraping and tokens. I should have thought of this before asking for resources!
+
+i think scraping is ok - the reader api can tackle js heavy sites 
+i also think that token usage is a non-issue based on calculations
+
+i'm not sure about jina search i might need another search api
+jina search returns no links if i give it too many search terms
+i can make it work if i only query 2-3 terms in every request
+but another search api is probably the best move imo
+if i make more requests then I get more useless links which means more requests for jina
+i need a way to find useless links and remove them
+but i need to be careful about accidentally removing useful links
+using a different search api doesn't fully solve the issue anyway because giving it too many keywords might make it fail too
+
+nike jina search 10k * 2 tokens
+nike jina read 14 pages - just 10k token??
+
+nevertheless jina came through on this request. gemini failed to extract the refund info.
+
+Total links processed: 14
+**Delivery:**
+- Delivery Charges: Rs. 1250.00; Free over Rs. 1250.00
+- Estimated Delivery Time: 4-7 days
+
+**Returns:**
+- Return Period: 30 days
+- Return Method: Brand pickup
+- Refund Mode: Not specified
+
+i need to clean the data even more before passing to gemini
+
+jina search missed - https://www.nike.com/in/help/a/returns-info-all
+which brave found
+
+i need to create a credit card and use brave
+
+To make Gemini (or any LLM) focus on keyword-dense sections:
+Move them earlier
+Add inline hints
+Wrap them with signal tags
+Prime the prompt with search guidance

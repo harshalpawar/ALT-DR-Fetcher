@@ -23,7 +23,7 @@ def search(brand):
     output_file = os.path.join(BRANDS_DIR, f'{brand["name"]}_data.json')
     JINA_API_KEY = os.getenv("JINA_API_KEY")
     urlDelivery = f"https://s.jina.ai/?q=delivery+shipping+charges&gl=IN&location=Mumbai&hl=en"
-    urlReturn = f"https://s.jina.ai/?q=returns+refund+exchange+pickup&gl=IN&location=Mumbai&hl=en"
+    urlReturn = f"https://s.jina.ai/?q=returns+refund&gl=IN&location=Mumbai&hl=en"
     headers = {
         "Accept": "application/json",
         "Authorization": f"Bearer {JINA_API_KEY}",
